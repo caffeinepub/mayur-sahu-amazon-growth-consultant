@@ -1,0 +1,280 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu targeting USA & UK brands. Expanded from 7 to 12+ sections with major upgrades: updated Hero with dual CTAs and trust badges, new Problem Section (pain points), expanded Services (4 categories), 3-tier Pricing, Case Studies with animated charts, Testimonials, enhanced About/Founder, updated Why Choose Us, and enhanced Strategy Call with WhatsApp + email form. Premium visual upgrades include scroll animations, Recharts data visualizations, glassmorphism cards, gold shimmer effects, Lucide icons, parallax hero, and animated counters. Same dark blue/gold theme (#0A0F1E + #C9A84C).",
+  "architectural_notes": [
+    "Dark blue/black theme with gold or white text, minimal layout with lots of whitespace",
+    "Premium consultant aesthetic — avoid crowded layout, cheap icons, or too many colors",
+    "Calendly integration to be added later to the Strategy Call section",
+    "Recharts library used for animated Before/After charts in Case Studies section",
+    "Scroll-triggered animations implemented via Intersection Observer or similar for fade/slide-in effects"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-single-page-react-frontend-with-7-sections-in-this-order-hero-positioning-services-pricing-about-strategy-call-cta-and-why-choose-use-a-sticky-top-navigation-bar-with-the-consultant-name-logo-and-a-book-call-cta-link-that-scrolls-to-the-strategy-call-section-all-sections-must-be-full-width-with-generous-vertical-padding-and-a-consistent-dark-blue-near-black-background-0a0f1e-or-similar",
+      "title": "Build a single-page React frontend with 7 sections in this order: Hero, Positioning, Services, Pricing, About, Strategy Call CTA, and Why Choose. Use a sticky top navigation bar with the consultant name/logo and a 'Book Call' CTA link that scrolls to the Strategy Call section. All sections must be full-width with generous vertical padding and a consistent dark blue/near-black background (#0A0F1E or similar).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-hero-section-section-1-with-a-large-bold-headline-premium-amazon-growth-consultant-for-usa-uk-brands-a-subheadline-helping-serious-amazon-sellers-scale-profitably-with-data-driven-strategy-advanced-ppc-optimization-and-brand-focused-growth-a-gold-styled-cta-button-labeled-book-free-strategy-call-that-scrolls-to-the-strategy-call-section-and-small-muted-text-below-the-button-reading-limited-clients-accepted-each-month-center-align-all-content-with-a-subtle-background-gradient-or-texture-to-add-depth",
+      "title": "Implement the Hero section (Section 1) with: a large bold headline 'Premium Amazon Growth Consultant for USA & UK Brands', a subheadline 'Helping serious Amazon sellers scale profitably with data-driven strategy, advanced PPC optimization and brand-focused growth.', a gold-styled CTA button labeled 'Book Free Strategy Call' that scrolls to the Strategy Call section, and small muted text below the button reading 'Limited Clients Accepted Each Month'. Center-align all content with a subtle background gradient or texture to add depth.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-positioning-section-section-2-with-headline-this-is-for-serious-sellers-only-followed-by-text-we-work-with-a-limited-number-of-amazon-sellers-who-are-ready-to-scale-and-optimize-profit-then-four-bullet-points-doing-5k-100k-month-private-label-brands-usa-uk-sellers-ready-to-scale-seriously-use-gold-accent-bullet-icons-or-checkmarks-layout-should-feel-exclusive-and-premium-not-a-generic-feature-list",
+      "title": "Implement the Positioning section (Section 2) with headline 'This Is For Serious Sellers Only', followed by text 'We work with a limited number of Amazon sellers who are ready to scale and optimize profit.', then four bullet points: 'Doing $5k–$100k/month', 'Private label brands', 'USA & UK sellers', 'Ready to scale seriously'. Use gold accent bullet icons or checkmarks. Layout should feel exclusive and premium — not a generic feature list.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-services-section-section-3-with-exactly-three-service-groups-displayed-as-cards-or-clean-columns-group-1-amazon-growth-profit-optimization-full-account-growth-strategy-ppc-scaling-acos-reduction-conversion-optimization-listing-performance-improvement-group-2-brand-scaling-product-launch-strategy-brand-positioning-a-content-direction-storefront-optimization-group-3-advanced-support-account-suspension-guidance-fba-planning-ebay-expansion-do-not-add-extra-services-or-icons-beyond-subtle-gold-accent-lines-dividers",
+      "title": "Implement the Services section (Section 3) with exactly three service groups displayed as cards or clean columns. Group 1 — 'Amazon Growth & Profit Optimization': Full account growth strategy, PPC scaling & ACOS reduction, Conversion optimization, Listing performance improvement. Group 2 — 'Brand Scaling': Product launch strategy, Brand positioning, A+ content direction, Storefront optimization. Group 3 — 'Advanced Support': Account suspension guidance, FBA planning, eBay expansion. Do NOT add extra services or icons beyond subtle gold accent lines/dividers.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-pricing-section-section-4-with-a-single-centered-pricing-card-titled-consulting-retainer-price-display-starting-from-500-month-supporting-text-final-pricing-depends-on-account-size-and-goals-minimum-3-month-commitment-we-work-with-limited-brands-to-maintain-high-performance-and-a-gold-cta-button-labeled-request-consultation-that-scrolls-to-the-strategy-call-section-the-card-should-feel-premium-use-gold-border-ample-padding-and-white-gold-typography",
+      "title": "Implement the Pricing section (Section 4) with a single centered pricing card titled 'Consulting Retainer', price display 'Starting from $500/month', supporting text 'Final pricing depends on account size and goals. Minimum 3-month commitment. We work with limited brands to maintain high performance.', and a gold CTA button labeled 'Request Consultation' that scrolls to the Strategy Call section. The card should feel premium — use gold border, ample padding, and white/gold typography.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-about-section-section-5-with-a-two-column-layout-left-column-shows-the-generated-professional-headshot-image-mayur-sahu-headshot-dim-400x500-png-from-frontend-public-assets-generated-right-column-shows-name-mayur-sahu-title-amazon-ecommerce-growth-consultant-and-five-credential-lines-12-years-ecommerce-experience-working-with-international-sellers-specialized-in-amazon-usa-uk-data-driven-scaling-strategies-direct-expert-support-no-outsourcing-on-mobile-stack-image-above-text",
+      "title": "Implement the About section (Section 5) with a two-column layout: left column shows the generated professional headshot image (mayur-sahu-headshot.dim_400x500.png from frontend/public/assets/generated/), right column shows name 'Mayur Sahu', title 'Amazon & Ecommerce Growth Consultant', and five credential lines: '12+ years ecommerce experience', 'Working with international sellers', 'Specialized in Amazon USA & UK', 'Data-driven scaling strategies', 'Direct expert support. No outsourcing.' On mobile, stack image above text.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-strategy-call-section-section-6-the-most-visually-prominent-section-with-headline-book-your-free-amazon-growth-strategy-call-supporting-text-get-account-audit-growth-roadmap-and-profit-improvement-insights-and-a-large-gold-cta-button-labeled-schedule-call-now-include-a-calendly-placeholder-render-a-bordered-placeholder-box-with-text-calendly-scheduling-widget-will-appear-here-styled-to-match-the-dark-theme-this-section-should-use-a-slightly-lighter-dark-background-or-a-gold-accent-border-to-draw-attention",
+      "title": "Implement the Strategy Call section (Section 6) — the most visually prominent section — with headline 'Book Your Free Amazon Growth Strategy Call', supporting text 'Get account audit, growth roadmap and profit improvement insights.', and a large gold CTA button labeled 'Schedule Call Now'. Include a Calendly placeholder: render a bordered placeholder box with text 'Calendly scheduling widget will appear here' styled to match the dark theme. This section should use a slightly lighter dark background or a gold accent border to draw attention.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-why-choose-section-section-7-with-five-trust-differentiator-bullet-points-work-directly-with-expert-lower-cost-than-us-agencies-limited-clients-full-focus-confidential-secure-long-term-growth-partner-display-as-a-clean-horizontal-row-of-cards-or-a-centered-vertical-list-with-gold-checkmark-icons-section-should-feel-like-a-trust-builder-close-to-the-page-footer",
+      "title": "Implement the Why Choose section (Section 7) with five trust/differentiator bullet points: 'Work directly with expert', 'Lower cost than US agencies', 'Limited clients = full focus', 'Confidential & secure', 'Long-term growth partner'. Display as a clean horizontal row of cards or a centered vertical list with gold checkmark icons. Section should feel like a trust-builder close to the page footer.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-minimal-footer-with-the-name-mayur-sahu-amazon-growth-consultant-and-copyright-notice-keep-it-dark-and-understated-one-line-of-small-white-muted-text-centered",
+      "title": "Add a minimal footer with the name 'Mayur Sahu — Amazon Growth Consultant' and copyright notice. Keep it dark and understated — one line of small white/muted text centered.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-premium-design-system-across-the-entire-page-primary-background-0a0f1e-near-black-dark-blue-gold-accent-color-c9a84c-for-buttons-borders-and-bullet-icons-white-ffffff-for-primary-text-light-gray-a0a8b8-for-subtext-use-a-professional-serif-or-elegant-sans-serif-google-font-for-headings-e-g-playfair-display-or-cormorant-garamond-and-a-clean-sans-serif-for-body-text-ensure-generous-whitespace-no-crowded-layouts-and-no-decorative-clip-art-icons",
+      "title": "Apply a consistent premium design system across the entire page: primary background #0A0F1E (near-black dark blue), gold accent color #C9A84C for buttons, borders, and bullet icons, white (#FFFFFF) for primary text, light gray (#A0A8B8) for subtext. Use a professional serif or elegant sans-serif Google Font for headings (e.g., Playfair Display or Cormorant Garamond) and a clean sans-serif for body text. Ensure generous whitespace, no crowded layouts, and no decorative clip-art icons.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-hero-section-with-the-new-headline-we-help-usa-uk-amazon-sellers-scale-profitably-without-hiring-expensive-agencies-dual-cta-buttons-book-free-strategy-call-and-get-free-account-audit-both-scrolling-to-the-strategy-call-section-and-three-animated-trust-badge-counters-below-the-buttons-limited-client-slots-12-years-experience-serving-global-sellers-add-a-subtle-particle-floating-dot-animated-background-and-a-parallax-scroll-effect-on-the-hero-background-layer-apply-a-gold-shimmer-pulse-animation-on-both-cta-buttons",
+      "title": "Update the Hero section with the new headline 'We Help USA & UK Amazon Sellers Scale Profitably Without Hiring Expensive Agencies.', dual CTA buttons ('Book Free Strategy Call' and 'Get Free Account Audit' — both scrolling to the Strategy Call section), and three animated trust badge counters below the buttons: 'Limited Client Slots', '12+ Years Experience', 'Serving Global Sellers'. Add a subtle particle/floating-dot animated background and a parallax scroll effect on the hero background layer. Apply a gold shimmer/pulse animation on both CTA buttons.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-problem-section-immediately-after-the-hero-section-with-the-headline-struggling-with-these-and-six-pain-point-items-displayed-as-a-responsive-grid-of-cards-high-acos-account-suspension-no-ranking-poor-conversion-fba-issues-sales-stuck-each-card-should-use-a-gold-accent-icon-lucide-react-glassmorphism-card-styling-with-a-gold-glow-border-and-a-scroll-triggered-fade-in-animation-the-section-background-should-be-the-standard-0a0f1e-dark-navy",
+      "title": "Add a new Problem Section immediately after the Hero section with the headline 'Struggling With These?' and six pain-point items displayed as a responsive grid of cards: 'High ACOS?', 'Account Suspension?', 'No Ranking?', 'Poor Conversion?', 'FBA Issues?', 'Sales Stuck?'. Each card should use a gold accent icon (Lucide React), glassmorphism card styling with a gold glow border, and a scroll-triggered fade-in animation. The section background should be the standard #0A0F1E dark navy.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-existing-servicessection-with-an-expanded-version-containing-four-service-category-cards-1-amazon-growth-management-full-account-management-ppc-management-listing-optimization-fba-setup-2-brand-development-brand-registry-a-content-strategy-storefront-design-product-launch-strategy-3-emergency-services-account-reinstatement-asin-suppression-fix-listing-hijacking-support-4-ebay-management-account-setup-listing-optimization-ppc-management-each-card-should-use-a-gold-accented-numbered-header-gold-lucide-icon-and-glassmorphism-card-styling-apply-staggered-scroll-triggered-slide-up-entrance-animations",
+      "title": "Replace the existing ServicesSection with an expanded version containing four service category cards: (1) 'Amazon Growth & Management' — Full account management, PPC management, Listing optimization, FBA setup; (2) 'Brand Development' — Brand registry, A+ content strategy, Storefront design, Product launch strategy; (3) 'Emergency Services' — Account reinstatement, ASIN suppression fix, Listing hijacking support; (4) 'eBay Management' — Account setup, Listing optimization, PPC management. Each card should use a gold-accented numbered header, gold Lucide icon, and glassmorphism card styling. Apply staggered scroll-triggered slide-up entrance animations.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-existing-pricingsection-with-a-3-tier-pricing-layout-displaying-three-cards-starter-499-month-growth-999-month-marked-as-most-popular-with-a-prominent-gold-badge-and-elite-1-999-month-below-the-cards-add-the-text-custom-plans-available-for-7-figure-brands-and-two-scarcity-lines-minimum-3-month-commitment-and-limited-onboarding-slots-available-the-growth-card-should-be-visually-elevated-larger-gold-border-glow-all-cards-use-glassmorphism-styling-each-card-includes-a-gold-cta-button-that-scrolls-to-the-strategy-call-section",
+      "title": "Replace the existing PricingSection with a 3-tier pricing layout displaying three cards: 'Starter' ($499/month), 'Growth' ($999/month, marked as 'Most Popular' with a prominent gold badge), and 'Elite' ($1,999/month). Below the cards add the text 'Custom plans available for 7-figure brands.' and two scarcity lines: 'Minimum 3-month commitment' and 'Limited onboarding slots available'. The 'Growth' card should be visually elevated (larger, gold border glow). All cards use glassmorphism styling. Each card includes a gold CTA button that scrolls to the Strategy Call section.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-case-studies-section-after-the-pricing-section-display-three-sample-case-study-cards-with-before-after-data-using-animated-recharts-bar-charts-sample-data-1-client-a-acos-reduced-from-45-to-18-revenue-grew-from-12k-mo-to-38k-mo-2-client-b-conversion-rate-improved-from-8-to-19-revenue-grew-from-8k-mo-to-24k-mo-3-client-c-ppc-spend-reduced-35-revenue-grew-from-20k-mo-to-61k-mo-include-animated-number-counter-reveals-count-up-on-scroll-for-the-key-metrics-use-the-dark-gold-theme-with-glassmorphism-cards",
+      "title": "Add a new Case Studies section after the Pricing section. Display three sample case study cards with Before → After data using animated Recharts bar charts. Sample data: (1) Client A — ACOS reduced from 45% to 18%, Revenue grew from $12k/mo to $38k/mo; (2) Client B — Conversion rate improved from 8% to 19%, Revenue grew from $8k/mo to $24k/mo; (3) Client C — PPC spend reduced 35%, Revenue grew from $20k/mo to $61k/mo. Include animated number counter reveals (count-up on scroll) for the key metrics. Use the dark gold theme with glassmorphism cards.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-testimonials-section-after-the-case-studies-section-display-five-sample-testimonials-as-a-responsive-card-grid-each-testimonial-includes-a-client-name-country-flag-emoji-usa-or-uk-a-short-review-quote-2-3-sentences-about-amazon-growth-results-a-5-star-gold-star-rating-and-a-subtle-gold-border-card-use-scroll-triggered-staggered-card-entrance-animations-sample-testimonial-names-and-content-should-sound-realistic-e-g-james-r-mayur-helped-us-cut-acos-from-52-to-21-in-just-60-days",
+      "title": "Add a new Testimonials section after the Case Studies section. Display five sample testimonials as a responsive card grid. Each testimonial includes a client name, country flag emoji (USA 🇺🇸 or UK 🇬🇧), a short review quote (2–3 sentences about Amazon growth results), a 5-star gold star rating, and a subtle gold border card. Use scroll-triggered staggered card entrance animations. Sample testimonial names and content should sound realistic (e.g., 'James R. 🇺🇸 — Mayur helped us cut ACOS from 52% to 21% in just 60 days...').",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-existing-about-founder-section-to-use-the-meet-the-founder-heading-display-mayur-sahu-s-name-and-title-amazon-ecommerce-growth-consultant-and-include-the-following-credential-lines-with-gold-checkmark-icons-12-years-ecommerce-experience-india-international-market-exposure-amazon-usa-uk-specialist-data-driven-scaling-strategy-approach-direct-expert-support-no-outsourcing-retain-the-existing-headshot-image-mayur-sahu-headshot-dim-400x500-png-in-the-left-column-with-gold-corner-accents-add-a-scroll-triggered-slide-in-animation-for-both-columns",
+      "title": "Update the existing About/Founder section to use the 'Meet The Founder' heading, display Mayur Sahu's name and title 'Amazon & Ecommerce Growth Consultant', and include the following credential lines with gold checkmark icons: '12+ years ecommerce experience', 'India + international market exposure', 'Amazon USA & UK specialist', 'Data-driven scaling strategy approach', 'Direct expert support — no outsourcing'. Retain the existing headshot image (mayur-sahu-headshot.dim_400x500.png) in the left column with gold corner accents. Add a scroll-triggered slide-in animation for both columns.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-existing-why-choose-section-with-updated-differentiator-content-work-directly-with-the-expert-no-junior-managers-lower-cost-than-us-agencies-save-up-to-60-limited-client-slots-100-focused-attention-performance-driven-approach-with-data-transparency-long-term-growth-partner-display-as-a-horizontal-row-of-glassmorphism-cards-with-gold-lucide-icons-add-scroll-triggered-staggered-card-entrance-animations",
+      "title": "Update the existing Why Choose section with updated differentiator content: 'Work directly with the expert (no junior managers)', 'Lower cost than US agencies — save up to 60%', 'Limited client slots = 100% focused attention', 'Performance-driven approach with data transparency', 'Long-term growth partner'. Display as a horizontal row of glassmorphism cards with gold Lucide icons. Add scroll-triggered staggered card entrance animations.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-existing-strategy-call-section-to-include-the-headline-book-your-free-30-minute-amazon-growth-strategy-call-supporting-text-get-a-full-account-audit-growth-roadmap-and-profit-improvement-insights-at-zero-cost-a-large-gold-schedule-call-now-button-scroll-to-calendly-a-whatsapp-cta-button-green-styling-lucide-messagecircle-icon-label-chat-on-whatsapp-href-https-wa-me-as-placeholder-and-a-simple-email-contact-form-with-fields-name-email-amazon-store-url-and-a-send-message-submit-button-retain-the-calendly-placeholder-box-the-section-should-use-a-slightly-lighter-background-0d1526-or-a-gold-accent-top-border-to-visually-stand-out",
+      "title": "Update the existing Strategy Call section to include: the headline 'Book Your Free 30-Minute Amazon Growth Strategy Call', supporting text 'Get a full account audit, growth roadmap, and profit improvement insights — at zero cost.', a large gold 'Schedule Call Now' button (scroll-to-Calendly), a WhatsApp CTA button (green styling, Lucide MessageCircle icon, label 'Chat on WhatsApp', href 'https://wa.me/' as placeholder), and a simple email contact form with fields: Name, Email, Amazon Store URL, and a 'Send Message' submit button. Retain the Calendly placeholder box. The section should use a slightly lighter background (#0D1526) or a gold accent top border to visually stand out.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-navigation-bar-to-include-links-to-all-new-sections-home-about-services-pricing-case-studies-testimonials-book-call-ensure-all-nav-links-smooth-scroll-to-the-correct-section-ids-update-the-mobile-hamburger-menu-to-include-the-new-section-links-keep-the-sticky-dark-styling-and-book-call-gold-cta-button",
+      "title": "Update the Navigation bar to include links to all new sections: Home, About, Services, Pricing, Case Studies, Testimonials, Book Call. Ensure all nav links smooth-scroll to the correct section IDs. Update the mobile hamburger menu to include the new section links. Keep the sticky dark styling and 'Book Call' gold CTA button.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-global-premium-animation-and-visual-polish-across-the-entire-page-1-implement-scroll-triggered-fade-in-and-slide-up-animations-for-all-sections-using-intersectionobserver-or-a-css-animation-approach-2-add-staggered-entrance-animations-for-cards-and-bullet-lists-3-apply-a-gold-shimmer-pulse-keyframe-animation-on-all-primary-gold-cta-buttons-4-add-subtle-hover-micro-animations-on-all-cards-scale-up-slightly-increase-gold-glow-intensity-5-add-an-animated-visual-pathway-or-step-connector-element-between-the-problem-services-pricing-strategy-call-sections-to-visually-guide-users-down-the-page-6-all-glassmorphism-cards-should-use-backdrop-blur-with-a-semi-transparent-dark-background-and-a-subtle-gold-border",
+      "title": "Apply global premium animation and visual polish across the entire page: (1) Implement scroll-triggered fade-in and slide-up animations for all sections using IntersectionObserver or a CSS animation approach; (2) Add staggered entrance animations for cards and bullet lists; (3) Apply a gold shimmer/pulse keyframe animation on all primary gold CTA buttons; (4) Add subtle hover micro-animations on all cards (scale up slightly, increase gold glow intensity); (5) Add an animated visual pathway or step-connector element between the Problem → Services → Pricing → Strategy Call sections to visually guide users down the page; (6) All glassmorphism cards should use backdrop-blur with a semi-transparent dark background and a subtle gold border.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Hero section with headline, subtext, CTA button and limited clients note",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Positioning section targeting serious sellers ($5k-$100k/month, private label, USA & UK)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Services section with 3 groups: Growth & Profit Optimization, Brand Scaling, Advanced Support",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Pricing section: Consulting Retainer from $500/month, 3-month minimum, Request Consultation CTA",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "About section for Mayur Sahu with photo placeholder and professional credentials",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Strategy Call section with Calendly integration placeholder and Schedule Call CTA",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Why Choose section with 5 trust/differentiator bullet points",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Updated Hero: new headline, dual CTAs (Book Free Strategy Call + Get Free Account Audit), trust badges (Limited Client Slots, 12+ Years Experience, Serving Global Sellers)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Problem Section: 'Struggling With These?' with 6 pain points (High ACOS, suspension, no ranking, poor conversion, FBA issues, sales stuck)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Expanded Services into 4 categories: Amazon Growth & Management, Brand Development, Emergency Services, eBay Management",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "3-tier Pricing: Starter / Growth (Most Popular) / Elite with placeholder pricing, custom plans note for 7-figure brands, and scarcity messaging",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Case Studies section: sample Before → After data with animated Recharts bar/line charts and number counter animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Testimonials section: 3-5 sample testimonials with client name and country flag (USA/UK)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Premium visual upgrades: scroll-triggered animations, parallax hero, gold shimmer on CTAs, glassmorphism cards, Lucide icons, animated counters, connecting pathway between sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Enhanced Strategy Call section with WhatsApp button and email form alongside Calendly placeholder",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Mayur Sahu Amazon Growth Consultant",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

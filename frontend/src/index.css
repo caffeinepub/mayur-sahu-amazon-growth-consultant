@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+    --background: 0.12 0.018 255;
+    --foreground: 0.97 0 0;
+    --card: 0.15 0.02 255;
+    --card-foreground: 0.97 0 0;
+    --popover: 0.15 0.02 255;
+    --popover-foreground: 0.97 0 0;
+    --primary: 0.75 0.12 85;
+    --primary-foreground: 0.12 0.018 255;
+    --secondary: 0.18 0.022 255;
+    --secondary-foreground: 0.97 0 0;
+    --muted: 0.18 0.022 255;
+    --muted-foreground: 0.62 0.01 255;
+    --accent: 0.75 0.12 85;
+    --accent-foreground: 0.12 0.018 255;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.25 0.025 255;
+    --input: 0.25 0.025 255;
+    --ring: 0.75 0.12 85;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.12 0.018 255;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.75 0.12 85;
+    --sidebar-primary-foreground: 0.12 0.018 255;
+    --sidebar-accent: 0.18 0.022 255;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.25 0.025 255;
+    --sidebar-ring: 0.75 0.12 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    background-color: #0A0F1E;
+    color: #FFFFFF;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-gold {
+    color: #C9A84C;
+  }
+
+  .bg-site {
+    background-color: #0A0F1E;
+  }
+
+  .bg-site-card {
+    background-color: #111827;
+  }
+
+  .bg-site-elevated {
+    background-color: #0D1526;
+  }
+
+  .border-gold {
+    border-color: #C9A84C;
+  }
+
+  .gold-divider {
+    width: 60px;
+    height: 2px;
+    background-color: #C9A84C;
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(201, 168, 76, 0.45);
+    box-shadow: 0 0 40px rgba(201, 168, 76, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Shimmer animation for CTA buttons */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2.5s infinite;
+  }
+
+  /* Scroll-triggered animation classes */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Step connector */
+  .step-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  .step-connector-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(201, 168, 76, 0.6), rgba(201, 168, 76, 0.1));
+  }
+
+  .step-connector-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #C9A84C;
+    box-shadow: 0 0 12px rgba(201, 168, 76, 0.6);
+    animation: pulse-dot 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+  33% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+  66% { transform: translateY(-10px) translateX(-8px); opacity: 0.6; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

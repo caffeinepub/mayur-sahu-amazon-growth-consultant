@@ -1,0 +1,283 @@
+{
+  "kind": "build_request",
+  "title": "Premium Upgrade: New Sections, 3-Tier Pricing, Case Studies, Testimonials & Visual Enhancements",
+  "projectName": "Mayur Sahu Consulting",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "text": "Update the Hero section with the new headline 'We Help USA & UK Amazon Sellers Scale Profitably Without Hiring Expensive Agencies.', dual CTA buttons ('Book Free Strategy Call' and 'Get Free Account Audit' — both scrolling to the Strategy Call section), and three animated trust badge counters below the buttons: 'Limited Client Slots', '12+ Years Experience', 'Serving Global Sellers'. Add a subtle particle/floating-dot animated background and a parallax scroll effect on the hero background layer. Apply a gold shimmer/pulse animation on both CTA buttons.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "We Help USA & UK Amazon Sellers Scale Profitably Without Hiring Expensive Agencies.",
+          "Buttons: Book Free Strategy Call, Get Free Account Audit",
+          "Limited Client Slots, 12+ Years Experience, Serving Global Sellers",
+          "Particle or subtle floating dot background in the Hero",
+          "Gold shimmer/pulse effect on primary CTA buttons"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero headline reads 'We Help USA & UK Amazon Sellers Scale Profitably Without Hiring Expensive Agencies.'",
+        "Two gold CTA buttons are visible: 'Book Free Strategy Call' and 'Get Free Account Audit'",
+        "Both buttons smooth-scroll to the Strategy Call section on click",
+        "Three trust badges are displayed below buttons with animated count-up or reveal",
+        "Floating dot/particle animation is visible in the hero background",
+        "Gold shimmer/pulse animation plays on CTA buttons"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Add a new Problem Section immediately after the Hero section with the headline 'Struggling With These?' and six pain-point items displayed as a responsive grid of cards: 'High ACOS?', 'Account Suspension?', 'No Ranking?', 'Poor Conversion?', 'FBA Issues?', 'Sales Stuck?'. Each card should use a gold accent icon (Lucide React), glassmorphism card styling with a gold glow border, and a scroll-triggered fade-in animation. The section background should be the standard #0A0F1E dark navy.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "PROBLEM SECTION (Emotional Trigger)",
+          "Struggling With These?",
+          "High ACOS? Account suspension? No ranking? Poor conversion? FBA issues? Sales stuck?"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section renders with headline 'Struggling With These?'",
+        "Six pain-point cards are displayed in a responsive grid",
+        "Each card contains a gold Lucide icon and the pain point label",
+        "Cards use glassmorphism styling with gold glow border",
+        "Cards animate in with a scroll-triggered fade-in effect"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Replace the existing ServicesSection with an expanded version containing four service category cards: (1) 'Amazon Growth & Management' — Full account management, PPC management, Listing optimization, FBA setup; (2) 'Brand Development' — Brand registry, A+ content strategy, Storefront design, Product launch strategy; (3) 'Emergency Services' — Account reinstatement, ASIN suppression fix, Listing hijacking support; (4) 'eBay Management' — Account setup, Listing optimization, PPC management. Each card should use a gold-accented numbered header, gold Lucide icon, and glassmorphism card styling. Apply staggered scroll-triggered slide-up entrance animations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "Instead of random services, divide smartly",
+          "Amazon Growth & Management, Brand Development, Emergency Services, eBay Management"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Four service category cards are rendered",
+        "Each card header is gold-accented and numbered",
+        "All service items listed under each group are present",
+        "Cards use glassmorphism styling with gold border glow",
+        "Cards animate in with staggered scroll-triggered slide-up animations"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Replace the existing PricingSection with a 3-tier pricing layout displaying three cards: 'Starter' ($499/month), 'Growth' ($999/month, marked as 'Most Popular' with a prominent gold badge), and 'Elite' ($1,999/month). Below the cards add the text 'Custom plans available for 7-figure brands.' and two scarcity lines: 'Minimum 3-month commitment' and 'Limited onboarding slots available'. The 'Growth' card should be visually elevated (larger, gold border glow). All cards use glassmorphism styling. Each card includes a gold CTA button that scrolls to the Strategy Call section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "Show only 3 monthly plans: Starter, Growth (Most Popular), Elite",
+          "Custom plans available for 7-figure brands.",
+          "3 month minimum commitment, Limited onboarding slots"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Three pricing tiers are displayed: Starter, Growth, Elite",
+        "Growth card has a 'Most Popular' gold badge and is visually elevated",
+        "Pricing shown: $499/mo, $999/mo, $1,999/mo",
+        "'Custom plans available for 7-figure brands.' text appears below cards",
+        "Scarcity messaging 'Minimum 3-month commitment' and 'Limited onboarding slots available' is shown",
+        "Each card has a CTA button that scrolls to the Strategy Call section"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Add a new Case Studies section after the Pricing section. Display three sample case study cards with Before → After data using animated Recharts bar charts. Sample data: (1) Client A — ACOS reduced from 45% to 18%, Revenue grew from $12k/mo to $38k/mo; (2) Client B — Conversion rate improved from 8% to 19%, Revenue grew from $8k/mo to $24k/mo; (3) Client C — PPC spend reduced 35%, Revenue grew from $20k/mo to $61k/mo. Include animated number counter reveals (count-up on scroll) for the key metrics. Use the dark gold theme with glassmorphism cards.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "CASE STUDIES (Very Important)",
+          "Before → After, Revenue growth %, ACOS improvement",
+          "Use charts and numbers. US clients care about data."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Case Studies section renders with three sample client cards",
+        "Each card contains a Recharts animated bar chart showing before/after data",
+        "Key metric numbers count up from zero when scrolled into view",
+        "Cards use glassmorphism styling consistent with the site theme",
+        "Section uses scroll-triggered fade-in entrance animation"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Add a new Testimonials section after the Case Studies section. Display five sample testimonials as a responsive card grid. Each testimonial includes a client name, country flag emoji (USA 🇺🇸 or UK 🇬🇧), a short review quote (2–3 sentences about Amazon growth results), a 5-star gold star rating, and a subtle gold border card. Use scroll-triggered staggered card entrance animations. Sample testimonial names and content should sound realistic (e.g., 'James R. 🇺🇸 — Mayur helped us cut ACOS from 52% to 21% in just 60 days...').",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "TESTIMONIALS",
+          "Client name, Country flag (USA / UK), Short review",
+          "Even 3–5 testimonials enough."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Testimonials section renders with five sample testimonial cards",
+        "Each card shows client name, country flag emoji, a review quote, and 5 gold stars",
+        "Cards have gold border styling consistent with the site theme",
+        "Staggered scroll-triggered entrance animations play on the cards"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Update the existing About/Founder section to use the 'Meet The Founder' heading, display Mayur Sahu's name and title 'Amazon & Ecommerce Growth Consultant', and include the following credential lines with gold checkmark icons: '12+ years ecommerce experience', 'India + international market exposure', 'Amazon USA & UK specialist', 'Data-driven scaling strategy approach', 'Direct expert support — no outsourcing'. Retain the existing headshot image (mayur-sahu-headshot.dim_400x500.png) in the left column with gold corner accents. Add a scroll-triggered slide-in animation for both columns.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "Meet The Founder",
+          "12 years ecommerce experience, India + international exposure, Amazon specialist, Data-driven strategy approach",
+          "Add your professional photo. This increases trust 5x."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section headline reads 'Meet The Founder'",
+        "Headshot image is displayed with gold corner accents",
+        "Five credential lines with gold checkmark icons are shown",
+        "Two-column layout on desktop, stacked on mobile",
+        "Scroll-triggered slide-in animation is applied to both columns"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Update the existing Why Choose section with updated differentiator content: 'Work directly with the expert (no junior managers)', 'Lower cost than US agencies — save up to 60%', 'Limited client slots = 100% focused attention', 'Performance-driven approach with data transparency', 'Long-term growth partner'. Display as a horizontal row of glassmorphism cards with gold Lucide icons. Add scroll-triggered staggered card entrance animations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "Lower cost than US agencies (save 60%)",
+          "Direct expert support (no junior managers)",
+          "Performance-driven approach",
+          "Limited client slots for quality focus"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Five differentiator cards are displayed",
+        "Cards reference cost savings, direct expert access, limited slots, performance-driven approach, long-term partnership",
+        "Each card has a gold Lucide icon",
+        "Glassmorphism card styling with gold border glow is applied",
+        "Staggered scroll-triggered entrance animations play on the cards"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Update the existing Strategy Call section to include: the headline 'Book Your Free 30-Minute Amazon Growth Strategy Call', supporting text 'Get a full account audit, growth roadmap, and profit improvement insights — at zero cost.', a large gold 'Schedule Call Now' button (scroll-to-Calendly), a WhatsApp CTA button (green styling, Lucide MessageCircle icon, label 'Chat on WhatsApp', href 'https://wa.me/' as placeholder), and a simple email contact form with fields: Name, Email, Amazon Store URL, and a 'Send Message' submit button. Retain the Calendly placeholder box. The section should use a slightly lighter background (#0D1526) or a gold accent top border to visually stand out.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "Book Your Free 30-Minute Amazon Growth Strategy Call",
+          "Calendly link, WhatsApp button, Email form",
+          "This is your conversion engine."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section headline reads 'Book Your Free 30-Minute Amazon Growth Strategy Call'",
+        "WhatsApp button is visible with green styling and MessageCircle icon",
+        "Email contact form has Name, Email, Amazon Store URL fields and a Submit button",
+        "Calendly placeholder box is retained",
+        "Section background is visually distinct from adjacent sections"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Update the Navigation bar to include links to all new sections: Home, About, Services, Pricing, Case Studies, Testimonials, Book Call. Ensure all nav links smooth-scroll to the correct section IDs. Update the mobile hamburger menu to include the new section links. Keep the sticky dark styling and 'Book Call' gold CTA button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10",
+          "msg-12"
+        ],
+        "quotes": [
+          "Home, About, Services, Pricing, Case Studies, Book Call"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation bar includes links to all new sections",
+        "All nav links smooth-scroll to their correct section IDs",
+        "Mobile hamburger menu includes updated links",
+        "Sticky dark styling and gold 'Book Call' CTA button are retained"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Apply global premium animation and visual polish across the entire page: (1) Implement scroll-triggered fade-in and slide-up animations for all sections using IntersectionObserver or a CSS animation approach; (2) Add staggered entrance animations for cards and bullet lists; (3) Apply a gold shimmer/pulse keyframe animation on all primary gold CTA buttons; (4) Add subtle hover micro-animations on all cards (scale up slightly, increase gold glow intensity); (5) Add an animated visual pathway or step-connector element between the Problem → Services → Pricing → Strategy Call sections to visually guide users down the page; (6) All glassmorphism cards should use backdrop-blur with a semi-transparent dark background and a subtle gold border.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-12"
+        ],
+        "quotes": [
+          "Smooth scroll-triggered fade-in & slide-up animations for each section",
+          "Staggered entrance animations for cards, bullet points, and stat counters",
+          "Hover micro-animations on all buttons and cards (gold glow, scale effects)",
+          "Animated connecting lines/step indicators between sections",
+          "Glassmorphism card styling with gold border glow"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All sections animate in with fade/slide when entering the viewport",
+        "Cards and list items animate in with staggered delays",
+        "Gold CTA buttons have a continuous shimmer or pulse keyframe animation",
+        "Cards scale slightly and increase glow on hover",
+        "A visual step connector or pathway element connects key conversion sections",
+        "All glassmorphism cards use backdrop-blur and gold border styling"
+      ]
+    }
+  ],
+  "constraints": [
+    "Maintain the exact dark blue/gold design system: background #0A0F1E, gold accent #C9A84C, white #FFFFFF for primary text, light gray #A0A8B8 for subtext",
+    "Use Playfair Display or Cormorant Garamond for headings as already configured",
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/",
+    "Do not add a Lead Magnet PDF section or Legal pages (Terms, Privacy, Refund Policy)",
+    "Case study and testimonial data must be clearly labeled as sample/placeholder content",
+    "WhatsApp link should use 'https://wa.me/' as a placeholder href — do not hardcode a real phone number"
+  ],
+  "nonGoals": [
+    "Lead Magnet PDF download ('7 Mistakes Killing Your Amazon Sales')",
+    "Legal pages (Terms & Conditions, Privacy Policy, Refund Policy, Service Agreement)",
+    "Contact page as a separate route",
+    "Real Calendly embed integration (placeholder only)",
+    "Backend logic or data persistence",
+    "Internet Identity authentication"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
