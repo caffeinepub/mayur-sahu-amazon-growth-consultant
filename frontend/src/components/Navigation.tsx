@@ -38,13 +38,13 @@ export default function Navigation() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo / Name */}
+        {/* Logo / Brand */}
         <div className="flex flex-col cursor-pointer" onClick={() => scrollToSection('hero')}>
           <span
             className="font-heading font-semibold tracking-wide"
             style={{ color: '#C9A84C', fontSize: '1.2rem', lineHeight: 1.2 }}
           >
-            Mayur Sahu
+            ProSellers
           </span>
           <span
             className="font-body text-xs tracking-widest uppercase"

@@ -1,6 +1,6 @@
 export default function Footer() {
   const year = new Date().getFullYear();
-  const appId = encodeURIComponent(typeof window !== 'undefined' ? window.location.hostname : 'mayur-sahu-consultant');
+  const appId = encodeURIComponent(typeof window !== 'undefined' ? window.location.hostname : 'prosellers-consultant');
 
   return (
     <footer
@@ -17,12 +17,12 @@ export default function Footer() {
           style={{ background: 'linear-gradient(90deg, transparent, #C9A84C, transparent)' }}
         />
 
-        {/* Name */}
+        {/* Brand */}
         <p
           className="font-heading font-light text-center"
           style={{ color: '#A0A8B8', fontSize: '0.9rem', letterSpacing: '0.05em' }}
         >
-          Mayur Sahu — Amazon Growth Consultant
+          ProSellers — Amazon Growth Consultant
         </p>
 
         {/* Copyright */}
@@ -30,7 +30,7 @@ export default function Footer() {
           className="font-body text-xs text-center"
           style={{ color: 'rgba(160, 168, 184, 0.5)' }}
         >
-          © {year} Mayur Sahu. All rights reserved.
+          © {year} ProSellers. All rights reserved.
         </p>
 
         {/* Attribution */}

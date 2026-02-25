@@ -1,13 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
-  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu targeting USA & UK brands. Expanded from 7 to 12+ sections with major upgrades: updated Hero with dual CTAs and trust badges, new Problem Section (pain points), expanded Services (4 categories), 3-tier Pricing, Case Studies with animated charts, Testimonials, enhanced About/Founder, updated Why Choose Us, and enhanced Strategy Call with WhatsApp + email form. Premium visual upgrades include scroll animations, Recharts data visualizations, glassmorphism cards, gold shimmer effects, Lucide icons, parallax hero, and animated counters. Same dark blue/gold theme (#0A0F1E + #C9A84C).",
+  "projectStateVersion": 7,
+  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu / ProSellers targeting USA & UK brands. Expanded from 7 to 12+ sections with major upgrades: updated Hero with dual CTAs and trust badges, new Problem Section (pain points), expanded Services (4 categories), 3-tier Pricing, Case Studies with animated charts, Testimonials, enhanced About/Founder, updated Why Choose Us, and enhanced Strategy Call with WhatsApp + email form. Premium visual upgrades include scroll animations, Recharts data visualizations, glassmorphism cards, gold shimmer effects, Lucide icons, parallax hero, and animated counters. Same dark blue/gold theme (#0A0F1E + #C9A84C).",
   "architectural_notes": [
     "Dark blue/black theme with gold or white text, minimal layout with lots of whitespace",
     "Premium consultant aesthetic — avoid crowded layout, cheap icons, or too many colors",
     "Calendly integration to be added later to the Strategy Call section",
     "Recharts library used for animated Before/After charts in Case Studies section",
-    "Scroll-triggered animations implemented via Intersection Observer or similar for fade/slide-in effects"
+    "Scroll-triggered animations implemented via Intersection Observer or similar for fade/slide-in effects",
+    "Company/brand name is 'ProSellers' — use in navigation logo, footer, and all branded references"
   ],
   "known_issues": [],
   "isFixRequest": false,
@@ -177,6 +178,14 @@
       "title": "Apply global premium animation and visual polish across the entire page: (1) Implement scroll-triggered fade-in and slide-up animations for all sections using IntersectionObserver or a CSS animation approach; (2) Add staggered entrance animations for cards and bullet lists; (3) Apply a gold shimmer/pulse keyframe animation on all primary gold CTA buttons; (4) Add subtle hover micro-animations on all cards (scale up slightly, increase gold glow intensity); (5) Add an animated visual pathway or step-connector element between the Problem → Services → Pricing → Strategy Call sections to visually guide users down the page; (6) All glassmorphism cards should use backdrop-blur with a semi-transparent dark background and a subtle gold border.",
       "reqIds": [
         "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-instances-of-the-consultant-brand-name-with-prosellers-across-the-entire-landing-page-update-the-navigation-bar-logo-brand-text-to-prosellers-update-the-footer-to-read-prosellers-amazon-growth-consultant-update-the-html-page-title-in-index-html-to-prosellers-amazon-growth-consultant-and-update-any-other-location-where-the-brand-company-name-appears-as-a-standalone-label-e-g-section-headings-meta-tags-or-branded-taglines-the-consultant-s-personal-name-mayur-sahu-should-remain-unchanged-wherever-it-appears-as-a-person-s-name-about-section-credentials-testimonial-references",
+      "title": "Replace all instances of the consultant brand name with 'ProSellers' across the entire landing page. Update the Navigation bar logo/brand text to 'ProSellers', update the Footer to read 'ProSellers — Amazon Growth Consultant', update the HTML page title in index.html to 'ProSellers | Amazon Growth Consultant', and update any other location where the brand/company name appears as a standalone label (e.g., section headings, meta tags, or branded taglines). The consultant's personal name 'Mayur Sahu' should remain unchanged wherever it appears as a person's name (About section, credentials, testimonial references).",
+      "reqIds": [
+        "REQ-22"
       ],
       "version": 1
     }

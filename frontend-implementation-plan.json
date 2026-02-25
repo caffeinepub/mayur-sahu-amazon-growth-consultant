@@ -1,274 +1,53 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Premium Upgrade: New Sections, 3-Tier Pricing, Case Studies, Testimonials & Visual Enhancements",
+  "title": "Update branding to ProSellers across the entire landing page",
   "requirements": [
     {
-      "id": "REQ-11",
-      "summary": "Update Hero section with new headline, dual CTAs, three animated trust badge counters, particle background animation, parallax scroll effect, and gold shimmer button animations",
+      "id": "REQ-22",
+      "summary": "Replace all instances of the consultant brand name with 'ProSellers' across the entire landing page while preserving the personal name 'Mayur Sahu'",
       "acceptanceCriteria": [
-        "Hero headline reads 'We Help USA & UK Amazon Sellers Scale Profitably Without Hiring Expensive Agencies.'",
-        "Two gold CTA buttons are visible: 'Book Free Strategy Call' and 'Get Free Account Audit'",
-        "Both buttons smooth-scroll to the Strategy Call section on click",
-        "Three trust badges are displayed below buttons with animated count-up or reveal",
-        "Floating dot/particle animation is visible in the hero background",
-        "Gold shimmer/pulse animation plays on CTA buttons"
+        "The Navigation bar logo/brand text displays 'ProSellers'",
+        "The Footer reads 'ProSellers — Amazon Growth Consultant'",
+        "The HTML <title> tag in index.html reads 'ProSellers | Amazon Growth Consultant' or similar",
+        "No stray references to the old brand name remain in any visible UI text",
+        "The personal name 'Mayur Sahu' is preserved unchanged in the About/Founder section and credential lines"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/HeroSection.tsx",
+          "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Replace headline with 'We Help USA & UK Amazon Sellers Scale Profitably Without Hiring Expensive Agencies.'. Replace single CTA with two buttons: 'Book Free Strategy Call' and 'Get Free Account Audit', both scrolling to #strategy-call. Add three trust badge counters below buttons: 'Limited Client Slots', '12+ Years Experience', 'Serving Global Sellers' with count-up animation using IntersectionObserver. Add particle/floating-dot animation using canvas or CSS keyframes in the background. Implement parallax scroll effect on background layer using scroll event listener. Apply gold shimmer/pulse keyframe animation to both CTA buttons."
-        }
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "summary": "Add new Problem Section with 'Struggling With These?' headline and six pain-point cards in responsive grid with glassmorphism styling, gold glow borders, and scroll-triggered fade-in animations",
-      "acceptanceCriteria": [
-        "Section renders with headline 'Struggling With These?'",
-        "Six pain-point cards are displayed in a responsive grid",
-        "Each card contains a gold Lucide icon and the pain point label",
-        "Cards use glassmorphism styling with gold glow border",
-        "Cards animate in with a scroll-triggered fade-in effect"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ProblemSection.tsx",
-          "operation": "create",
-          "description": "Create new Problem Section component with headline 'Struggling With These?'. Display six pain-point cards in a responsive grid (2 cols mobile, 3 cols desktop): 'High ACOS?', 'Account Suspension?', 'No Ranking?', 'Poor Conversion?', 'FBA Issues?', 'Sales Stuck?'. Each card uses a Lucide React icon (e.g., AlertCircle, Ban, TrendingDown, MousePointerClick, Package, BarChart), glassmorphism card styling (backdrop-blur-md, bg-white/5, border-gold-500/30), and a gold glow border. Implement scroll-triggered fade-in animation using IntersectionObserver. Section background is #0A0F1E."
+          "description": "Update the HTML <title> tag to read 'ProSellers | Amazon Growth Consultant' and update any meta tags that reference the brand name"
         },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import ProblemSection and add it immediately after HeroSection in the component tree. Update section IDs and ensure proper ordering: Hero → Problem → Services → Pricing → Case Studies → Testimonials → About → Why Choose → Strategy Call."
-        }
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "summary": "Replace existing ServicesSection with expanded version containing four service category cards with gold-accented numbered headers, glassmorphism styling, and staggered scroll-triggered slide-up animations",
-      "acceptanceCriteria": [
-        "Four service category cards are rendered",
-        "Each card header is gold-accented and numbered",
-        "All service items listed under each group are present",
-        "Cards use glassmorphism styling with gold border glow",
-        "Cards animate in with staggered scroll-triggered slide-up animations"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ServicesSection.tsx",
-          "operation": "modify",
-          "description": "Replace existing three-column service cards with four service category cards: (1) 'Amazon Growth & Management' — Full account management, PPC management, Listing optimization, FBA setup; (2) 'Brand Development' — Brand registry, A+ content strategy, Storefront design, Product launch strategy; (3) 'Emergency Services' — Account reinstatement, ASIN suppression fix, Listing hijacking support; (4) 'eBay Management' — Account setup, Listing optimization, PPC management. Each card uses a gold-accented numbered header (e.g., '01'), Lucide icon, and glassmorphism card styling (backdrop-blur-md, bg-white/5, border-gold-500/30). Implement staggered scroll-triggered slide-up animation using IntersectionObserver with incremental delays."
-        }
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "summary": "Replace existing PricingSection with 3-tier pricing layout (Starter, Growth, Elite) with 'Most Popular' badge on Growth tier, glassmorphism styling, scarcity messaging, and scroll-to-call CTAs",
-      "acceptanceCriteria": [
-        "Three pricing tiers are displayed: Starter, Growth, Elite",
-        "Growth card has a 'Most Popular' gold badge and is visually elevated",
-        "Pricing shown: $499/mo, $999/mo, $1,999/mo",
-        "'Custom plans available for 7-figure brands.' text appears below cards",
-        "Scarcity messaging 'Minimum 3-month commitment' and 'Limited onboarding slots available' is shown",
-        "Each card has a CTA button that scrolls to the Strategy Call section"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/PricingSection.tsx",
-          "operation": "modify",
-          "description": "Replace single pricing card with three-tier pricing layout: 'Starter' ($499/month), 'Growth' ($999/month, marked 'Most Popular' with prominent gold badge), 'Elite' ($1,999/month). Make Growth card visually elevated (larger scale, stronger gold border glow). All cards use glassmorphism styling (backdrop-blur-md, bg-white/5, border-gold-500/30). Below cards add: 'Custom plans available for 7-figure brands.' and scarcity lines 'Minimum 3-month commitment' and 'Limited onboarding slots available'. Each card includes a gold CTA button with smooth-scroll to #strategy-call."
-        }
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "summary": "Add new Case Studies section with three sample client cards featuring animated Recharts bar charts, count-up number reveals, and glassmorphism styling",
-      "acceptanceCriteria": [
-        "Case Studies section renders with three sample client cards",
-        "Each card contains a Recharts animated bar chart showing before/after data",
-        "Key metric numbers count up from zero when scrolled into view",
-        "Cards use glassmorphism styling consistent with the site theme",
-        "Section uses scroll-triggered fade-in entrance animation"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/CaseStudiesSection.tsx",
-          "operation": "create",
-          "description": "Create Case Studies section component with headline 'Case Studies' or 'Proven Results'. Display three sample case study cards with Before → After data: (1) Client A — ACOS reduced from 45% to 18%, Revenue grew from $12k/mo to $38k/mo; (2) Client B — Conversion rate improved from 8% to 19%, Revenue grew from $8k/mo to $24k/mo; (3) Client C — PPC spend reduced 35%, Revenue grew from $20k/mo to $61k/mo. Each card includes an animated Recharts BarChart (import from 'recharts') showing before/after comparison bars with gold accent color. Implement animated number counter reveals (count-up on scroll) for key metrics using IntersectionObserver. Cards use glassmorphism styling (backdrop-blur-md, bg-white/5, border-gold-500/30). Add a disclaimer: 'Sample data for illustration purposes.' Section uses scroll-triggered fade-in animation."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import CaseStudiesSection and add it after PricingSection in the component tree."
-        }
-      ]
-    },
-    {
-      "id": "REQ-16",
-      "summary": "Add new Testimonials section with five sample testimonial cards in responsive grid featuring client names, country flags, reviews, 5-star ratings, and staggered entrance animations",
-      "acceptanceCriteria": [
-        "Testimonials section renders with five sample testimonial cards",
-        "Each card shows client name, country flag emoji, a review quote, and 5 gold stars",
-        "Cards have gold border styling consistent with the site theme",
-        "Staggered scroll-triggered entrance animations play on the cards"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/TestimonialsSection.tsx",
-          "operation": "create",
-          "description": "Create Testimonials section component with headline 'What Our Clients Say' or 'Client Success Stories'. Display five sample testimonial cards in a responsive grid (1 col mobile, 2-3 cols desktop). Each card includes: client name (e.g., 'James R.'), country flag emoji (🇺🇸 or 🇬🇧), short 2-3 sentence review quote about Amazon growth results, and 5 gold star icons (Lucide Star). Sample testimonials should sound realistic (e.g., 'James R. 🇺🇸 — Mayur helped us cut ACOS from 52% to 21% in just 60 days. His data-driven approach transformed our PPC performance. Highly recommend for serious sellers.'). Cards use glassmorphism styling (backdrop-blur-md, bg-white/5, border-gold-500/30) with gold border. Implement staggered scroll-triggered entrance animations using IntersectionObserver with incremental delays. Add disclaimer: 'Sample testimonials for illustration purposes.'"
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import TestimonialsSection and add it after CaseStudiesSection in the component tree."
-        }
-      ]
-    },
-    {
-      "id": "REQ-17",
-      "summary": "Update About/Founder section with 'Meet The Founder' heading, five credential lines with gold checkmarks, gold corner accents on headshot, and scroll-triggered slide-in animation",
-      "acceptanceCriteria": [
-        "Section headline reads 'Meet The Founder'",
-        "Headshot image is displayed with gold corner accents",
-        "Five credential lines with gold checkmark icons are shown",
-        "Two-column layout on desktop, stacked on mobile",
-        "Scroll-triggered slide-in animation is applied to both columns"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/AboutSection.tsx",
-          "operation": "modify",
-          "description": "Update section headline to 'Meet The Founder'. Retain the two-column layout with headshot image (frontend/public/assets/generated/mayur-sahu-headshot.dim_400x500.png) in the left column. Add gold corner accent decorations (CSS pseudo-elements or overlays) to the image frame. Update credential lines to: '12+ years ecommerce experience', 'India + international market exposure', 'Amazon USA & UK specialist', 'Data-driven scaling strategy approach', 'Direct expert support — no outsourcing'. Use Lucide Check or CheckCircle icon for gold checkmarks. Implement scroll-triggered slide-in animation for both columns using IntersectionObserver (left column slides from left, right column slides from right)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-18",
-      "summary": "Update Why Choose section with updated differentiator content, glassmorphism cards, gold icons, and staggered entrance animations",
-      "acceptanceCriteria": [
-        "Five differentiator cards are displayed",
-        "Cards reference cost savings, direct expert access, limited slots, performance-driven approach, long-term partnership",
-        "Each card has a gold Lucide icon",
-        "Glassmorphism card styling with gold border glow is applied",
-        "Staggered scroll-triggered entrance animations play on the cards"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/WhyChooseSection.tsx",
-          "operation": "modify",
-          "description": "Update differentiator content to: 'Work directly with the expert (no junior managers)', 'Lower cost than US agencies — save up to 60%', 'Limited client slots = 100% focused attention', 'Performance-driven approach with data transparency', 'Long-term growth partner'. Display as horizontal row of glassmorphism cards (backdrop-blur-md, bg-white/5, border-gold-500/30) with gold Lucide icons (e.g., UserCheck, DollarSign, Users, TrendingUp, Handshake). Implement staggered scroll-triggered entrance animations using IntersectionObserver with incremental delays."
-        }
-      ]
-    },
-    {
-      "id": "REQ-19",
-      "summary": "Update Strategy Call section with new headline, supporting text, WhatsApp CTA button, email contact form, and visual distinction styling",
-      "acceptanceCriteria": [
-        "Section headline reads 'Book Your Free 30-Minute Amazon Growth Strategy Call'",
-        "WhatsApp button is visible with green styling and MessageCircle icon",
-        "Email contact form has Name, Email, Amazon Store URL fields and a Submit button",
-        "Calendly placeholder box is retained",
-        "Section background is visually distinct from adjacent sections"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/StrategyCallSection.tsx",
-          "operation": "modify",
-          "description": "Update headline to 'Book Your Free 30-Minute Amazon Growth Strategy Call'. Update supporting text to 'Get a full account audit, growth roadmap, and profit improvement insights — at zero cost.' Add a large gold 'Schedule Call Now' button (smooth-scroll to Calendly placeholder). Add a WhatsApp CTA button with green background (bg-green-600 hover:bg-green-700), Lucide MessageCircle icon, label 'Chat on WhatsApp', href='https://wa.me/' (placeholder). Add email contact form with fields: Name (text input), Email (email input), Amazon Store URL (text input), and 'Send Message' submit button. Retain Calendly placeholder box. Apply slightly lighter background (#0D1526) or gold accent top border to visually distinguish the section."
-        }
-      ]
-    },
-    {
-      "id": "REQ-20",
-      "summary": "Update Navigation bar with links to all new sections including Case Studies and Testimonials, ensure smooth-scroll functionality, and update mobile menu",
-      "acceptanceCriteria": [
-        "Navigation bar includes links to all new sections",
-        "All nav links smooth-scroll to their correct section IDs",
-        "Mobile hamburger menu includes updated links",
-        "Sticky dark styling and gold 'Book Call' CTA button are retained"
-      ],
-      "file_operations": [
         {
           "path": "frontend/src/components/Navigation.tsx",
           "operation": "modify",
-          "description": "Update navigation links to include all new sections: Home (#hero), About (#about), Services (#services), Pricing (#pricing), Case Studies (#case-studies), Testimonials (#testimonials), Book Call (#strategy-call). Ensure all nav links use smooth-scroll behavior (scrollIntoView with behavior: 'smooth'). Update mobile hamburger menu to include the same updated links. Retain sticky dark styling (bg-navy-900/95 backdrop-blur-md) and gold 'Book Call' CTA button."
-        }
-      ]
-    },
-    {
-      "id": "REQ-21",
-      "summary": "Apply global premium animation and visual polish: scroll-triggered animations, staggered entrance effects, gold shimmer on CTAs, hover micro-animations, visual pathway connector, and glassmorphism styling across all cards",
-      "acceptanceCriteria": [
-        "All sections animate in with fade/slide when entering the viewport",
-        "Cards and list items animate in with staggered delays",
-        "Gold CTA buttons have a continuous shimmer or pulse keyframe animation",
-        "Cards scale slightly and increase glow on hover",
-        "A visual step connector or pathway element connects key conversion sections",
-        "All glassmorphism cards use backdrop-blur and gold border styling"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add global keyframe animations: @keyframes shimmer (gold shimmer/pulse for CTA buttons using gradient background-position shift), @keyframes fadeInUp (fade-in + slide-up for sections), @keyframes fadeIn (simple opacity fade). Add utility classes: .animate-shimmer, .animate-fadeInUp, .animate-fadeIn with appropriate animation properties. Add hover transition utilities for card hover effects (scale-105, enhanced shadow-gold-lg/50). Define .glassmorphism-card utility class with backdrop-blur-md, bg-white/5, border border-gold-500/30, and rounded-2xl. Add .step-connector visual pathway styling (vertical dashed gold line or animated dots) for connecting sections."
+          "description": "Update the logo/brand text in the navigation bar to display 'ProSellers' instead of 'Mayur Sahu' or any previous brand name"
         },
         {
-          "path": "frontend/tailwind.config.js",
+          "path": "frontend/src/components/Footer.tsx",
           "operation": "modify",
-          "description": "Extend Tailwind theme with new keyframe animations: shimmer (background-position animation), fadeInUp (opacity + translateY), fadeIn (opacity). Add corresponding animation utilities: shimmer, fadeInUp, fadeIn. Extend boxShadow with shadow-gold-lg for card glow effects. Ensure gold-500 and navy-900 colors are defined in the color palette."
+          "description": "Update the footer text to read 'ProSellers — Amazon Growth Consultant' while preserving any other footer elements and attribution links"
         },
         {
           "path": "frontend/src/components/HeroSection.tsx",
           "operation": "modify",
-          "description": "Apply animate-shimmer class to both CTA buttons for continuous gold shimmer effect. Ensure IntersectionObserver triggers fadeInUp animation on section mount."
-        },
-        {
-          "path": "frontend/src/components/ProblemSection.tsx",
-          "operation": "modify",
-          "description": "Apply glassmorphism-card utility class to all pain-point cards. Add hover:scale-105 hover:shadow-gold-lg transitions. Implement scroll-triggered fadeIn animation with IntersectionObserver."
-        },
-        {
-          "path": "frontend/src/components/ServicesSection.tsx",
-          "operation": "modify",
-          "description": "Apply glassmorphism-card utility class to all service category cards. Add hover:scale-105 hover:shadow-gold-lg transitions. Implement staggered fadeInUp animation with IntersectionObserver (delay each card by 100-150ms)."
-        },
-        {
-          "path": "frontend/src/components/PricingSection.tsx",
-          "operation": "modify",
-          "description": "Apply glassmorphism-card utility class to all pricing tier cards. Add hover:scale-105 hover:shadow-gold-lg transitions. Apply animate-shimmer to CTA buttons. Add step-connector element (vertical gold dashed line or animated dots) connecting Pricing section to Strategy Call section."
-        },
-        {
-          "path": "frontend/src/components/CaseStudiesSection.tsx",
-          "operation": "modify",
-          "description": "Apply glassmorphism-card utility class to all case study cards. Add hover:scale-105 hover:shadow-gold-lg transitions. Implement scroll-triggered fadeInUp animation with IntersectionObserver."
-        },
-        {
-          "path": "frontend/src/components/TestimonialsSection.tsx",
-          "operation": "modify",
-          "description": "Apply glassmorphism-card utility class to all testimonial cards. Add hover:scale-105 hover:shadow-gold-lg transitions. Implement staggered fadeIn animation with IntersectionObserver (delay each card by 100-150ms)."
+          "description": "Review and update any brand name references in the hero section (headings, subheadings, or taglines) to use 'ProSellers' while keeping 'Mayur Sahu' unchanged where it appears as the founder's personal name"
         },
         {
           "path": "frontend/src/components/AboutSection.tsx",
           "operation": "modify",
-          "description": "Add hover:scale-105 transition to headshot image. Ensure scroll-triggered slide-in animation is implemented with IntersectionObserver."
-        },
-        {
-          "path": "frontend/src/components/WhyChooseSection.tsx",
-          "operation": "modify",
-          "description": "Apply glassmorphism-card utility class to all differentiator cards. Add hover:scale-105 hover:shadow-gold-lg transitions. Implement staggered fadeInUp animation with IntersectionObserver."
+          "description": "Review the About section to ensure 'Mayur Sahu' personal name remains unchanged in the founder profile and credentials, while updating any standalone brand/company name references to 'ProSellers'"
         },
         {
           "path": "frontend/src/components/StrategyCallSection.tsx",
           "operation": "modify",
-          "description": "Apply animate-shimmer class to primary CTA button. Add step-connector element (visual pathway or animated arrow) pointing from Pricing → Strategy Call to guide users down the conversion funnel."
+          "description": "Review and update any brand name references in form labels, headings, or call-to-action text to use 'ProSellers' while preserving personal name references"
         },
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/TestimonialsSection.tsx",
           "operation": "modify",
-          "description": "Add step-connector visual elements (CSS-based vertical lines, animated dots, or SVG paths) between key conversion sections: Problem → Services → Pricing → Strategy Call. Ensure all section IDs match navigation targets: #hero, #problem, #services, #pricing, #case-studies, #testimonials, #about, #why-choose, #strategy-call."
+          "description": "Review testimonial section headings or introductory text for brand name references and update to 'ProSellers' if present, while keeping 'Mayur Sahu' unchanged in testimonial content where it refers to the person"
         }
       ]
     }
