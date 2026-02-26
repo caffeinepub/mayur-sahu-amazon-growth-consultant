@@ -1,41 +1,69 @@
 {
   "kind": "build_request",
-  "title": "Fix GlobalServiceSection flag and country name rendering",
+  "title": "Merge LeadMagnetSection into StrategyCallSection as 3-box single-row layout",
   "projectName": "ProSellers",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-48",
-      "text": "Rewrite GlobalServiceSection.tsx to fix flag emoji rendering and country name display issues. Define the four country objects as a JavaScript array where each object has an 'emoji' string (the flag emoji character) and a 'name' string that is a fully explicit, hard-coded plain string literal — 'United States', 'United Kingdom', 'Canada', 'Australia' — with zero reliance on Unicode abbreviations or character codes. Render each flag emoji inside a dedicated <span> element with an explicit inline style setting font-family to 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, sans-serif' to force proper emoji font fallback on all browsers. Render each country name as a separate plain <span> JSX text node with the string value typed directly — no template literals, no computed values, no character codes. Retain the existing glassmorphism card styling with gold border accents and scroll-triggered entrance animations. All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) and country names must display correctly on Chrome, Firefox, Safari, and Edge on desktop, laptop, and mobile with zero square/tofu characters.",
+      "id": "REQ-49",
+      "text": "Rewrite StrategyCallSection.tsx to replace the current two-column layout with a new single-row layout containing three side-by-side boxes: Box 1 — 'Schedule Your Call' containing the existing Calendly placeholder (bordered box with 'Calendly scheduling widget will appear here' text, styled to match the dark theme), the 'Schedule Call Now' gold CTA button (href: 'https://calendly.com/your-link'), and the WhatsApp 'Chat on WhatsApp' green button (href: 'https://wa.me/918766936874'); Box 2 — 'Send a Message' containing the existing contact form with Name, Email, and Amazon Store URL fields plus a 'Send Message' submit button with the existing submission success state; Box 3 — '7 Profit Killers in Amazon PPC' containing the full content currently in LeadMagnetSection: the description text 'Discover the 7 most common mistakes that drain Amazon PPC budgets — and how to fix them. Download your free guide now.', the email input field, the gold 'Get Free PDF' CTA button, and the existing success message state on submit. All three boxes must use glassmorphism card styling with gold border accents, consistent with the existing design system. On mobile, the three boxes must stack vertically. The section heading 'Book Your Free 30-Minute Amazon Growth Strategy Call' and supporting text must remain at the top of the section. Retain the section's slightly lighter background (#0D1526) and gold accent top border.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-recent-5",
+          "msg-recent-7"
         ],
         "quotes": [
-          "GLOBAL REACH Serving Amazon Sellers Globally. this section has same no flags display ,, and 2box issues same sas above .. fix it same as you have done above"
+          "merge 7 Profit Killers in Amazon PPC section into the FREE STRATEGY CALL.. like Schedule Your Call in one box.. Send a Message... in another box.. 7 Profit Killers section in 3rd box in one row",
+          "mo keep the same content icons etc.. just places one neside another in 3 boxes.. in one row.. as itstaking more space on page"
         ]
       },
       "acceptanceCriteria": [
-        "All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) render as visible colored flag images, not squares or boxes, on Chrome, Firefox, Safari, and Edge.",
-        "All four country name labels ('United States', 'United Kingdom', 'Canada', 'Australia') render as readable plain text with zero tofu/square characters on all browsers.",
-        "Each flag emoji span has an explicit inline font-family style including 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji' fallbacks.",
-        "Country name strings are hard-coded plain string literals in the data array — no Unicode character codes or abbreviations used.",
-        "Glassmorphism card styling with gold border accents is retained.",
-        "Scroll-triggered entrance animations are retained and functional.",
-        "The section heading 'Serving Amazon Sellers Globally' remains visible and correctly styled."
+        "StrategyCallSection displays three boxes side-by-side in a single row on desktop",
+        "Box 1 contains the Calendly placeholder, Schedule Call Now button (href: https://calendly.com/your-link), and WhatsApp button (href: https://wa.me/918766936874)",
+        "Box 2 contains the contact form with Name, Email, Amazon Store URL fields and Send Message button with existing submission success state",
+        "Box 3 contains the 7 Profit Killers description, email capture form, Get Free PDF button, and success message state",
+        "All three boxes use glassmorphism card styling with gold borders consistent with the site design system",
+        "On mobile, the three boxes stack vertically in order (Box 1, Box 2, Box 3)",
+        "Section heading and supporting text remain visible at the top of the section",
+        "Section background (#0D1526) and gold accent top border are retained",
+        "All existing icons, styling, and form functionality are preserved — no content is lost"
+      ]
+    },
+    {
+      "id": "REQ-50",
+      "text": "Remove the standalone LeadMagnetSection component from App.tsx (currently positioned after ComparisonSection) since its content has been merged into Box 3 of StrategyCallSection. Also remove the SectionConnector instance that was placed immediately before or after LeadMagnetSection in the App.tsx section order. Update the App.tsx import list to remove the LeadMagnetSection import.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-5",
+          "msg-recent-7"
+        ],
+        "quotes": [
+          "The standalone LeadMagnetSection will be removed from its current position (after ComparisonSection) since its content is being merged into Box 3"
+        ]
+      },
+      "acceptanceCriteria": [
+        "LeadMagnetSection is no longer rendered anywhere in App.tsx",
+        "The LeadMagnetSection import is removed from App.tsx",
+        "The SectionConnector that was adjacent to LeadMagnetSection is removed so no orphaned connector remains",
+        "The page flow reads: ... ComparisonSection → SectionConnector → StrategyCallSection (with no LeadMagnetSection in between)",
+        "No visual gap or broken layout appears where LeadMagnetSection previously existed"
       ]
     }
   ],
   "constraints": [
-    "Do not change the section layout, card structure, or animation logic beyond what is necessary to fix the rendering issue.",
-    "Do not modify any files listed in frontend.immutablePaths.",
-    "Retain all existing scroll-triggered animation behavior."
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/",
+    "All existing content, icons, and form functionality from both StrategyCallSection and LeadMagnetSection must be preserved — nothing should be lost, only consolidated",
+    "The email capture form in Box 3 must remain static/UI-only with no backend wiring",
+    "WhatsApp href must remain https://wa.me/918766936874",
+    "Calendly links must remain https://calendly.com/your-link"
   ],
   "nonGoals": [
-    "Adding new countries or changing the four displayed countries.",
-    "Redesigning the card layout or visual style beyond the rendering fix.",
-    "Modifying any other section components."
+    "Wiring any form to a backend email service",
+    "Adding new content or icons not already present in the existing components",
+    "Changing the design system, color palette, or global styles",
+    "Modifying any other section components beyond StrategyCallSection and App.tsx"
   ],
   "imageRequirements": {
     "required": [],

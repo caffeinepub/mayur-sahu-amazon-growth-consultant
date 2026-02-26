@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 27,
-  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu / ProSellers targeting USA & UK brands. Major V4 upgrade in progress: footer with global serving line + timezone/positioning, animated scroll arrows, real WhatsApp number (+918766936874), font/icon size polish, logo size increase, floating horizontal contact bar (phone/email/Calendly callback) pinned to bottom center as single line, global positioning line, 'How We Work' 4-step framework section, Trust & Security section, Global Service section with country flags, smart animated FAQ section (18 Q&As accordion), Comparison section (US Agency vs ProSellers), Lead Magnet UI (email capture for PDF), and Calendly placeholder across all CTAs. Previous: dark blue/gold theme, 12+ sections, Recharts charts, glassmorphism cards, scroll animations.",
+  "projectStateVersion": 29,
+  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu / ProSellers targeting USA & UK brands. Major V4 upgrade in progress with all sections built. Latest change: merging LeadMagnetSection into StrategyCallSection as a 3-box single-row layout (Box 1: Schedule Your Call / Calendly, Box 2: Send a Message / contact form, Box 3: 7 Profit Killers in Amazon PPC / lead magnet). LeadMagnetSection removed as standalone section.",
   "architectural_notes": [
     "Dark blue/black theme with gold or white text, minimal layout with lots of whitespace",
     "Premium consultant aesthetic — avoid crowded layout, cheap icons, or too many colors",
@@ -10,10 +10,11 @@
     "Scroll-triggered animations implemented via Intersection Observer or similar for fade/slide-in effects",
     "Company/brand name is 'ProSellers' — use in navigation logo, footer, and all branded references",
     "Calendly placeholder URL: https://calendly.com/your-link — used across all Schedule Call / Request a Call Back CTAs",
-    "Floating contact strip repositioned from right-hand side vertical strip to bottom-center horizontal bar (single line: phone | email | Request a Call Back)"
+    "Floating contact strip repositioned from right-hand side vertical strip to bottom-center horizontal bar (single line: phone | email | Request a Call Back)",
+    "LeadMagnetSection merged into StrategyCallSection as 3rd box in a 3-column row; no longer a standalone section in the page flow"
   ],
   "known_issues": [],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-build-a-single-page-react-frontend-with-7-sections-in-this-order-hero-positioning-services-pricing-about-strategy-call-cta-and-why-choose-use-a-sticky-top-navigation-bar-with-the-consultant-name-logo-and-a-book-call-cta-link-that-scrolls-to-the-strategy-call-section-all-sections-must-be-full-width-with-generous-vertical-padding-and-a-consistent-dark-blue-near-black-background-0a0f1e-or-similar",
@@ -398,6 +399,22 @@
         "REQ-48"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-rewrite-strategycallsection-tsx-to-replace-the-current-two-column-layout-with-a-new-single-row-layout-containing-three-side-by-side-boxes-box-1-schedule-your-call-containing-the-existing-calendly-placeholder-bordered-box-with-calendly-scheduling-widget-will-appear-here-text-styled-to-match-the-dark-theme-the-schedule-call-now-gold-cta-button-href-https-calendly-com-your-link-and-the-whatsapp-chat-on-whatsapp-green-button-href-https-wa-me-918766936874-box-2-send-a-message-containing-the-existing-contact-form-with-name-email-and-amazon-store-url-fields-plus-a-send-message-submit-button-with-the-existing-submission-success-state-box-3-7-profit-killers-in-amazon-ppc-containing-the-full-content-currently-in-leadmagnetsection-the-description-text-discover-the-7-most-common-mistakes-that-drain-amazon-ppc-budgets-and-how-to-fix-them-download-your-free-guide-now-the-email-input-field-the-gold-get-free-pdf-cta-button-and-the-existing-success-message-state-on-submit-all-three-boxes-must-use-glassmorphism-card-styling-with-gold-border-accents-consistent-with-the-existing-design-system-on-mobile-the-three-boxes-must-stack-vertically-the-section-heading-book-your-free-30-minute-amazon-growth-strategy-call-and-supporting-text-must-remain-at-the-top-of-the-section-retain-the-section-s-slightly-lighter-background-0d1526-and-gold-accent-top-border",
+      "title": "Rewrite StrategyCallSection.tsx to replace the current two-column layout with a new single-row layout containing three side-by-side boxes: Box 1 — 'Schedule Your Call' containing the existing Calendly placeholder (bordered box with 'Calendly scheduling widget will appear here' text, styled to match the dark theme), the 'Schedule Call Now' gold CTA button (href: 'https://calendly.com/your-link'), and the WhatsApp 'Chat on WhatsApp' green button (href: 'https://wa.me/918766936874'); Box 2 — 'Send a Message' containing the existing contact form with Name, Email, and Amazon Store URL fields plus a 'Send Message' submit button with the existing submission success state; Box 3 — '7 Profit Killers in Amazon PPC' containing the full content currently in LeadMagnetSection: the description text 'Discover the 7 most common mistakes that drain Amazon PPC budgets — and how to fix them. Download your free guide now.', the email input field, the gold 'Get Free PDF' CTA button, and the existing success message state on submit. All three boxes must use glassmorphism card styling with gold border accents, consistent with the existing design system. On mobile, the three boxes must stack vertically. The section heading 'Book Your Free 30-Minute Amazon Growth Strategy Call' and supporting text must remain at the top of the section. Retain the section's slightly lighter background (#0D1526) and gold accent top border.",
+      "reqIds": [
+        "REQ-49"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-standalone-leadmagnetsection-component-from-app-tsx-currently-positioned-after-comparisonsection-since-its-content-has-been-merged-into-box-3-of-strategycallsection-also-remove-the-sectionconnector-instance-that-was-placed-immediately-before-or-after-leadmagnetsection-in-the-app-tsx-section-order-update-the-app-tsx-import-list-to-remove-the-leadmagnetsection-import",
+      "title": "Remove the standalone LeadMagnetSection component from App.tsx (currently positioned after ComparisonSection) since its content has been merged into Box 3 of StrategyCallSection. Also remove the SectionConnector instance that was placed immediately before or after LeadMagnetSection in the App.tsx section order. Update the App.tsx import list to remove the LeadMagnetSection import.",
+      "reqIds": [
+        "REQ-50"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -546,12 +563,6 @@
       "status": "pending"
     },
     {
-      "id": "AR-26",
-      "summary": "Lead Magnet UI: email capture form with download button for '7 Profit Killers in Amazon PPC' PDF (static/placeholder)",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
       "id": "AR-27",
       "summary": "Add Calendly placeholder link (https://calendly.com/your-link) to all applicable CTA locations site-wide",
       "reqIds": [],
@@ -602,6 +613,12 @@
     {
       "id": "AR-36",
       "summary": "Fix GlobalServiceSection flag rendering: apply explicit emoji font-family fallback and hard-coded plain string country names (same fix as FlagStripSection) to resolve tofu/square rendering on all browsers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-37",
+      "summary": "Merge LeadMagnetSection into StrategyCallSection as 3-box single-row layout: Box 1 (Schedule Your Call/Calendly), Box 2 (Send a Message/contact form), Box 3 (7 Profit Killers/lead magnet). Remove standalone LeadMagnetSection.",
       "reqIds": [],
       "status": "pending"
     }

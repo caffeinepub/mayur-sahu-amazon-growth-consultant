@@ -14,7 +14,6 @@ import TrustSecuritySection from './components/TrustSecuritySection';
 import GlobalServiceSection from './components/GlobalServiceSection';
 import FAQSection from './components/FAQSection';
 import ComparisonSection from './components/ComparisonSection';
-import LeadMagnetSection from './components/LeadMagnetSection';
 import ScrollButtons from './components/ScrollButtons';
 import FloatingSideStrip from './components/FloatingSideStrip';
 import Footer from './components/Footer';
@@ -54,8 +53,6 @@ export default function App() {
         <ComparisonSection />
         <SectionConnector />
         <FAQSection />
-        <SectionConnector />
-        <LeadMagnetSection />
         <SectionConnector />
         <StrategyCallSection />
       </main>

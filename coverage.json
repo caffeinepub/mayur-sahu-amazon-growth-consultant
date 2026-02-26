@@ -1,24 +1,35 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-26T05:42:09.366Z",
+  "generatedAt": "2026-02-26T07:24:49.973Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 1,
-    "implemented": 1,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-48",
-        "summary": "Rewrite GlobalServiceSection.tsx to fix flag emoji rendering and country name display issues. Define the four country objects as a JavaScript array where each object has an 'emoji' string (the flag emoji character) and a 'name' string that is a fully explicit, hard-coded plain string literal — 'United States', 'United Kingdom', 'Canada', 'Australia' — with zero reliance on Unicode abbreviations or character codes. Render each flag emoji inside a dedicated <span> element with an explicit inline style setting font-family to 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, sans-serif' to force proper emoji font fallback on all browsers. Render each country name as a separate plain <span> JSX text node with the string value typed directly — no template literals, no computed values, no character codes. Retain the existing glassmorphism card styling with gold border accents and scroll-triggered entrance animations. All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) and country names must display correctly on Chrome, Firefox, Safari, and Edge on desktop, laptop, and mobile with zero square/tofu characters.",
+        "id": "REQ-49",
+        "summary": "Rewrite StrategyCallSection.tsx to replace the current two-column layout with a new single-row layout containing three side-by-side boxes: Box 1 — 'Schedule Your Call' containing the existing Calendly placeholder (bordered box with 'Calendly scheduling widget will appear here' text, styled to match the dark theme), the 'Schedule Call Now' gold CTA button (href: 'https://calendly.com/your-link'), and the WhatsApp 'Chat on WhatsApp' green button (href: 'https://wa.me/918766936874'); Box 2 — 'Send a Message' containing the existing contact form with Name, Email, and Amazon Store URL fields plus a 'Send Message' submit button with the existing submission success state; Box 3 — '7 Profit Killers in Amazon PPC' containing the full content currently in LeadMagnetSection: the description text 'Discover the 7 most common mistakes that drain Amazon PPC budgets — and how to fix them. Download your free guide now.', the email input field, the gold 'Get Free PDF' CTA button, and the existing success message state on submit. All three boxes must use glassmorphism card styling with gold border accents, consistent with the existing design system. On mobile, the three boxes must stack vertically. The section heading 'Book Your Free 30-Minute Amazon Growth Strategy Call' and supporting text must remain at the top of the section. Retain the section's slightly lighter background (#0D1526) and gold accent top border.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/GlobalServiceSection.tsx"
+          "frontend/src/components/StrategyCallSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/GlobalServiceSection.tsx"
+          "frontend/src/components/StrategyCallSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-50",
+        "summary": "Remove the standalone LeadMagnetSection component from App.tsx (currently positioned after ComparisonSection) since its content has been merged into Box 3 of StrategyCallSection. Also remove the SectionConnector instance that was placed immediately before or after LeadMagnetSection in the App.tsx section order. Update the App.tsx import list to remove the LeadMagnetSection import.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
         ]
       }
     ]
@@ -28,7 +39,9 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/GlobalServiceSection.tsx",
+    "frontend/src/App.tsx",
+    "frontend/src/components/LeadMagnetSection.tsx",
+    "frontend/src/components/StrategyCallSection.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

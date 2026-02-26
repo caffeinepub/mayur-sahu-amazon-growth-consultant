@@ -1,11 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, Calendar, Mail, User, Globe } from 'lucide-react';
+import { MessageCircle, Calendar, Mail, User, Globe, Download, CheckCircle } from 'lucide-react';
 
 export default function StrategyCallSection() {
   const [formData, setFormData] = useState({ name: '', email: '', storeUrl: '' });
   const [submitted, setSubmitted] = useState(false);
+
+  const [pdfEmail, setPdfEmail] = useState('');
+  const [pdfSubmitted, setPdfSubmitted] = useState(false);
+
   const headingRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
+  const boxesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -17,13 +21,18 @@ export default function StrategyCallSection() {
       { threshold: 0.1 }
     );
     if (headingRef.current) observer.observe(headingRef.current);
-    if (formRef.current) observer.observe(formRef.current);
+    if (boxesRef.current) observer.observe(boxesRef.current);
     return () => observer.disconnect();
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+  };
+
+  const handlePdfSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setPdfSubmitted(true);
   };
 
   return (
@@ -47,7 +56,7 @@ export default function StrategyCallSection() {
         style={{ background: 'linear-gradient(90deg, transparent 0%, #C9A84C 50%, transparent 100%)' }}
       />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div ref={headingRef} className="text-center mb-14 reveal">
           <div className="flex items-center justify-center gap-3 mb-8">
@@ -82,20 +91,42 @@ export default function StrategyCallSection() {
           </p>
         </div>
 
-        {/* Two-column: Calendly + Form */}
-        <div ref={formRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal">
-          {/* Left: Calendly + WhatsApp */}
-          <div className="flex flex-col gap-5">
-            {/* Calendly Placeholder */}
+        {/* Three-column row */}
+        <div ref={boxesRef} className="flex flex-col lg:flex-row gap-6 reveal">
+
+          {/* ── Box 1: Schedule Your Call ── */}
+          <div
+            className="flex flex-col flex-1"
+            style={{
+              background: 'rgba(255,255,255,0.04)',
+              backdropFilter: 'blur(14px)',
+              border: '1px solid rgba(201,168,76,0.25)',
+              borderTop: '3px solid #C9A84C',
+              borderRadius: '4px',
+              boxShadow: '0 0 40px rgba(201,168,76,0.07)',
+              padding: '32px 28px',
+            }}
+          >
+            {/* Box header */}
+            <div className="flex items-center gap-2 mb-6">
+              <Calendar size={20} style={{ color: '#C9A84C' }} />
+              <h3
+                className="font-heading font-semibold"
+                style={{ fontSize: '1.2rem', color: '#FFFFFF' }}
+              >
+                Schedule Your Call
+              </h3>
+            </div>
+
+            {/* Calendly placeholder */}
             <div
-              id="calendly-placeholder"
-              className="flex flex-col items-center justify-center flex-1"
+              className="flex flex-col items-center justify-center flex-1 mb-6"
               style={{
-                minHeight: '280px',
+                minHeight: '200px',
                 border: '1px dashed rgba(201, 168, 76, 0.35)',
                 borderRadius: '4px',
                 backgroundColor: 'rgba(201, 168, 76, 0.03)',
-                padding: '40px 24px',
+                padding: '32px 20px',
               }}
             >
               <div
@@ -108,56 +139,52 @@ export default function StrategyCallSection() {
                 <Calendar size={22} style={{ color: '#C9A84C' }} />
               </div>
               <p
-                className="font-heading font-semibold mb-2"
-                style={{ fontSize: '1.2rem', color: '#FFFFFF' }}
-              >
-                Schedule Your Call
-              </p>
-              <p
-                className="font-body text-sm font-light text-center mb-6"
+                className="font-body text-sm font-light text-center"
                 style={{ color: '#A0A8B8' }}
               >
-                Click below to book your free 30-minute strategy call.
+                Calendly scheduling widget will appear here
               </p>
-              <a
-                href="https://calendly.com/your-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-shimmer font-body font-medium px-8 py-3 transition-all duration-300"
-                style={{
-                  backgroundColor: '#C9A84C',
-                  color: '#0A0F1E',
-                  fontSize: '0.9rem',
-                  letterSpacing: '0.06em',
-                  borderRadius: '2px',
-                  border: '1px solid #C9A84C',
-                  boxShadow: '0 0 30px rgba(201, 168, 76, 0.2)',
-                  textDecoration: 'none',
-                  display: 'inline-block',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#C9A84C';
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#0A0F1E';
-                }}
-              >
-                Schedule Call Now
-              </a>
             </div>
+
+            {/* Schedule Call Now CTA */}
+            <a
+              href="https://calendly.com/your-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-shimmer font-body font-medium px-6 py-3.5 text-center transition-all duration-300 mb-3"
+              style={{
+                backgroundColor: '#C9A84C',
+                color: '#0A0F1E',
+                fontSize: '0.9rem',
+                letterSpacing: '0.06em',
+                borderRadius: '2px',
+                border: '1px solid #C9A84C',
+                boxShadow: '0 0 30px rgba(201, 168, 76, 0.2)',
+                textDecoration: 'none',
+                display: 'block',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
+                (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#C9A84C';
+                (e.currentTarget as HTMLAnchorElement).style.color = '#0A0F1E';
+              }}
+            >
+              Schedule Call Now
+            </a>
 
             {/* WhatsApp Button */}
             <a
               href="https://wa.me/918766936874"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 py-4 font-body font-medium transition-all duration-300"
+              className="flex items-center justify-center gap-3 py-3.5 font-body font-medium transition-all duration-300"
               style={{
                 backgroundColor: '#16a34a',
                 color: '#FFFFFF',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 letterSpacing: '0.04em',
                 borderRadius: '4px',
                 border: '1px solid #16a34a',
@@ -172,25 +199,36 @@ export default function StrategyCallSection() {
                 (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
               }}
             >
-              <MessageCircle size={20} />
+              <MessageCircle size={18} />
               Chat on WhatsApp
             </a>
           </div>
 
-          {/* Right: Email Form */}
-          <div className="glass-card p-8">
+          {/* ── Box 2: Send a Message ── */}
+          <div
+            className="flex flex-col flex-1"
+            style={{
+              background: 'rgba(255,255,255,0.04)',
+              backdropFilter: 'blur(14px)',
+              border: '1px solid rgba(201,168,76,0.25)',
+              borderTop: '3px solid #C9A84C',
+              borderRadius: '4px',
+              boxShadow: '0 0 40px rgba(201,168,76,0.07)',
+              padding: '32px 28px',
+            }}
+          >
             <div className="flex items-center gap-2 mb-6">
               <Mail size={20} style={{ color: '#C9A84C' }} />
               <h3
                 className="font-heading font-semibold"
-                style={{ fontSize: '1.3rem', color: '#FFFFFF' }}
+                style={{ fontSize: '1.2rem', color: '#FFFFFF' }}
               >
                 Send a Message
               </h3>
             </div>
 
             {submitted ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center">
+              <div className="flex flex-col items-center justify-center flex-1 py-10 text-center">
                 <div
                   className="w-14 h-14 flex items-center justify-center mb-4 rounded-full"
                   style={{
@@ -198,7 +236,7 @@ export default function StrategyCallSection() {
                     border: '1px solid rgba(201, 168, 76, 0.3)',
                   }}
                 >
-                  <span style={{ fontSize: '1.5rem' }}>✓</span>
+                  <CheckCircle size={26} style={{ color: '#C9A84C' }} />
                 </div>
                 <p
                   className="font-heading font-semibold mb-2"
@@ -214,7 +252,7 @@ export default function StrategyCallSection() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
                 {/* Name */}
                 <div className="flex flex-col gap-1.5">
                   <label
@@ -315,7 +353,7 @@ export default function StrategyCallSection() {
 
                 <button
                   type="submit"
-                  className="w-full font-body font-medium py-3.5 mt-2 btn-shimmer transition-all duration-300"
+                  className="w-full font-body font-medium py-3.5 mt-auto btn-shimmer transition-all duration-300"
                   style={{
                     backgroundColor: '#C9A84C',
                     color: '#0A0F1E',
@@ -340,6 +378,152 @@ export default function StrategyCallSection() {
               </form>
             )}
           </div>
+
+          {/* ── Box 3: 7 Profit Killers ── */}
+          <div
+            className="flex flex-col flex-1"
+            style={{
+              background: 'rgba(255,255,255,0.04)',
+              backdropFilter: 'blur(14px)',
+              border: '1px solid rgba(201,168,76,0.25)',
+              borderTop: '3px solid #C9A84C',
+              borderRadius: '4px',
+              boxShadow: '0 0 40px rgba(201,168,76,0.07)',
+              padding: '32px 28px',
+            }}
+          >
+            {/* Box header */}
+            <div className="flex items-center gap-2 mb-6">
+              <Download size={20} style={{ color: '#C9A84C' }} />
+              <h3
+                className="font-heading font-semibold"
+                style={{ fontSize: '1.2rem', color: '#FFFFFF' }}
+              >
+                7 Profit Killers in Amazon PPC
+              </h3>
+            </div>
+
+            {/* Icon + badge */}
+            <div className="flex flex-col items-center text-center mb-6">
+              <div
+                className="w-14 h-14 flex items-center justify-center mb-4 rounded-full"
+                style={{
+                  backgroundColor: 'rgba(201,168,76,0.12)',
+                  border: '2px solid rgba(201,168,76,0.4)',
+                  boxShadow: '0 0 30px rgba(201,168,76,0.2)',
+                }}
+              >
+                <Download size={26} style={{ color: '#C9A84C' }} />
+              </div>
+
+              <div
+                className="px-4 py-1 mb-4 font-body text-xs font-medium tracking-widest uppercase"
+                style={{
+                  backgroundColor: 'rgba(201,168,76,0.12)',
+                  border: '1px solid rgba(201,168,76,0.3)',
+                  borderRadius: '2px',
+                  color: '#C9A84C',
+                  letterSpacing: '0.15em',
+                }}
+              >
+                Free Download
+              </div>
+
+              <p
+                className="font-body font-light"
+                style={{ color: '#A0A8B8', fontSize: '0.95rem', lineHeight: 1.75 }}
+              >
+                Discover the 7 most common mistakes that drain Amazon PPC budgets — and how to fix them. Download your free guide now.
+              </p>
+            </div>
+
+            {/* Form or Success */}
+            <div className="mt-auto">
+              {pdfSubmitted ? (
+                <div className="flex flex-col items-center gap-3 py-6 text-center">
+                  <div
+                    className="w-12 h-12 flex items-center justify-center rounded-full"
+                    style={{
+                      backgroundColor: 'rgba(201,168,76,0.12)',
+                      border: '2px solid rgba(201,168,76,0.5)',
+                    }}
+                  >
+                    <CheckCircle size={24} style={{ color: '#C9A84C' }} />
+                  </div>
+                  <p
+                    className="font-heading font-semibold"
+                    style={{ fontSize: '1.15rem', color: '#C9A84C' }}
+                  >
+                    You're In!
+                  </p>
+                  <p
+                    className="font-body text-sm font-light"
+                    style={{ color: '#A0A8B8' }}
+                  >
+                    Thank you! Check your email for the download link.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handlePdfSubmit} className="flex flex-col gap-3">
+                  <div className="relative">
+                    <Mail
+                      size={14}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                      style={{ color: 'rgba(201,168,76,0.5)' }}
+                    />
+                    <input
+                      type="email"
+                      required
+                      placeholder="Enter your email address"
+                      value={pdfEmail}
+                      onChange={(e) => setPdfEmail(e.target.value)}
+                      className="w-full font-body text-sm pl-9 pr-4 py-3 outline-none transition-all duration-200"
+                      style={{
+                        backgroundColor: 'rgba(255,255,255,0.05)',
+                        border: '1px solid rgba(201,168,76,0.25)',
+                        borderRadius: '2px',
+                        color: '#FFFFFF',
+                      }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.6)')}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.25)')}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn-shimmer font-body font-medium py-3.5 flex items-center justify-center gap-2 transition-all duration-300"
+                    style={{
+                      backgroundColor: '#C9A84C',
+                      color: '#0A0F1E',
+                      fontSize: '0.9rem',
+                      letterSpacing: '0.05em',
+                      borderRadius: '2px',
+                      border: '1px solid #C9A84C',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = '#C9A84C';
+                      e.currentTarget.style.boxShadow = '0 0 30px rgba(201,168,76,0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#C9A84C';
+                      e.currentTarget.style.color = '#0A0F1E';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    <Download size={16} />
+                    Get Free PDF
+                  </button>
+                  <p
+                    className="font-body text-xs text-center"
+                    style={{ color: 'rgba(160,168,184,0.5)' }}
+                  >
+                    No spam. Unsubscribe anytime.
+                  </p>
+                </form>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
