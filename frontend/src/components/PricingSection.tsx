@@ -203,7 +203,7 @@ export default function PricingSection() {
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check size={14} className="flex-shrink-0 mt-0.5" style={{ color: '#C9A84C' }} />
+                    <Check size={16} className="flex-shrink-0 mt-0.5" style={{ color: '#C9A84C' }} />
                     <span
                       className="font-body text-sm font-light leading-relaxed"
                       style={{ color: '#A0A8B8' }}
@@ -215,9 +215,12 @@ export default function PricingSection() {
               </ul>
 
               {/* CTA */}
-              <button
+              <a
+                href="https://calendly.com/your-link"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => scrollToSection('strategy-call')}
-                className="w-full font-body font-medium py-3.5 transition-all duration-300 btn-shimmer"
+                className="w-full font-body font-medium py-3.5 text-center transition-all duration-300 btn-shimmer"
                 style={{
                   backgroundColor: plan.elevated ? '#C9A84C' : 'transparent',
                   color: plan.elevated ? '#0A0F1E' : '#C9A84C',
@@ -225,20 +228,22 @@ export default function PricingSection() {
                   letterSpacing: '0.06em',
                   borderRadius: '2px',
                   border: '1px solid #C9A84C',
+                  textDecoration: 'none',
+                  display: 'block',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#C9A84C';
-                  e.currentTarget.style.color = '#0A0F1E';
-                  e.currentTarget.style.boxShadow = '0 0 30px rgba(201, 168, 76, 0.3)';
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#C9A84C';
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#0A0F1E';
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 30px rgba(201, 168, 76, 0.3)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = plan.elevated ? '#C9A84C' : 'transparent';
-                  e.currentTarget.style.color = plan.elevated ? '#0A0F1E' : '#C9A84C';
-                  e.currentTarget.style.boxShadow = 'none';
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = plan.elevated ? '#C9A84C' : 'transparent';
+                  (e.currentTarget as HTMLAnchorElement).style.color = plan.elevated ? '#0A0F1E' : '#C9A84C';
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
                 }}
               >
                 {plan.cta}
-              </button>
+              </a>
             </div>
           ))}
         </div>

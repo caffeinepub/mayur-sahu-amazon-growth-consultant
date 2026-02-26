@@ -1,38 +1,41 @@
 {
   "kind": "build_request",
-  "title": "Update branding to ProSellers across the entire landing page",
+  "title": "Fix GlobalServiceSection flag and country name rendering",
   "projectName": "ProSellers",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-22",
-      "text": "Replace all instances of the consultant brand name with 'ProSellers' across the entire landing page. Update the Navigation bar logo/brand text to 'ProSellers', update the Footer to read 'ProSellers — Amazon Growth Consultant', update the HTML page title in index.html to 'ProSellers | Amazon Growth Consultant', and update any other location where the brand/company name appears as a standalone label (e.g., section headings, meta tags, or branded taglines). The consultant's personal name 'Mayur Sahu' should remain unchanged wherever it appears as a person's name (About section, credentials, testimonial references).",
+      "id": "REQ-48",
+      "text": "Rewrite GlobalServiceSection.tsx to fix flag emoji rendering and country name display issues. Define the four country objects as a JavaScript array where each object has an 'emoji' string (the flag emoji character) and a 'name' string that is a fully explicit, hard-coded plain string literal — 'United States', 'United Kingdom', 'Canada', 'Australia' — with zero reliance on Unicode abbreviations or character codes. Render each flag emoji inside a dedicated <span> element with an explicit inline style setting font-family to 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, sans-serif' to force proper emoji font fallback on all browsers. Render each country name as a separate plain <span> JSX text node with the string value typed directly — no template literals, no computed values, no character codes. Retain the existing glassmorphism card styling with gold border accents and scroll-triggered entrance animations. All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) and country names must display correctly on Chrome, Firefox, Safari, and Edge on desktop, laptop, and mobile with zero square/tofu characters.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "my company name is prosellers"
+          "GLOBAL REACH Serving Amazon Sellers Globally. this section has same no flags display ,, and 2box issues same sas above .. fix it same as you have done above"
         ]
       },
       "acceptanceCriteria": [
-        "The Navigation bar logo/brand text displays 'ProSellers'",
-        "The Footer reads 'ProSellers — Amazon Growth Consultant'",
-        "The HTML <title> tag in index.html reads 'ProSellers | Amazon Growth Consultant' or similar",
-        "No stray references to the old brand name remain in any visible UI text",
-        "The personal name 'Mayur Sahu' is preserved unchanged in the About/Founder section and credential lines"
+        "All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) render as visible colored flag images, not squares or boxes, on Chrome, Firefox, Safari, and Edge.",
+        "All four country name labels ('United States', 'United Kingdom', 'Canada', 'Australia') render as readable plain text with zero tofu/square characters on all browsers.",
+        "Each flag emoji span has an explicit inline font-family style including 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji' fallbacks.",
+        "Country name strings are hard-coded plain string literals in the data array — no Unicode character codes or abbreviations used.",
+        "Glassmorphism card styling with gold border accents is retained.",
+        "Scroll-triggered entrance animations are retained and functional.",
+        "The section heading 'Serving Amazon Sellers Globally' remains visible and correctly styled."
       ]
     }
   ],
   "constraints": [
-    "Do not change 'Mayur Sahu' personal name references — only company/brand name references should be updated to 'ProSellers'",
-    "Do not alter any section layout, animations, or styling while making this text change"
+    "Do not change the section layout, card structure, or animation logic beyond what is necessary to fix the rendering issue.",
+    "Do not modify any files listed in frontend.immutablePaths.",
+    "Retain all existing scroll-triggered animation behavior."
   ],
   "nonGoals": [
-    "Changing any section content beyond brand name references",
-    "Updating logos or images",
-    "Modifying any backend code"
+    "Adding new countries or changing the four displayed countries.",
+    "Redesigning the card layout or visual style beyond the rendering fix.",
+    "Modifying any other section components."
   ],
   "imageRequirements": {
     "required": [],

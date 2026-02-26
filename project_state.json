@@ -1,17 +1,19 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
-  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu / ProSellers targeting USA & UK brands. Expanded from 7 to 12+ sections with major upgrades: updated Hero with dual CTAs and trust badges, new Problem Section (pain points), expanded Services (4 categories), 3-tier Pricing, Case Studies with animated charts, Testimonials, enhanced About/Founder, updated Why Choose Us, and enhanced Strategy Call with WhatsApp + email form. Premium visual upgrades include scroll animations, Recharts data visualizations, glassmorphism cards, gold shimmer effects, Lucide icons, parallax hero, and animated counters. Same dark blue/gold theme (#0A0F1E + #C9A84C).",
+  "projectStateVersion": 27,
+  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu / ProSellers targeting USA & UK brands. Major V4 upgrade in progress: footer with global serving line + timezone/positioning, animated scroll arrows, real WhatsApp number (+918766936874), font/icon size polish, logo size increase, floating horizontal contact bar (phone/email/Calendly callback) pinned to bottom center as single line, global positioning line, 'How We Work' 4-step framework section, Trust & Security section, Global Service section with country flags, smart animated FAQ section (18 Q&As accordion), Comparison section (US Agency vs ProSellers), Lead Magnet UI (email capture for PDF), and Calendly placeholder across all CTAs. Previous: dark blue/gold theme, 12+ sections, Recharts charts, glassmorphism cards, scroll animations.",
   "architectural_notes": [
     "Dark blue/black theme with gold or white text, minimal layout with lots of whitespace",
     "Premium consultant aesthetic — avoid crowded layout, cheap icons, or too many colors",
     "Calendly integration to be added later to the Strategy Call section",
     "Recharts library used for animated Before/After charts in Case Studies section",
     "Scroll-triggered animations implemented via Intersection Observer or similar for fade/slide-in effects",
-    "Company/brand name is 'ProSellers' — use in navigation logo, footer, and all branded references"
+    "Company/brand name is 'ProSellers' — use in navigation logo, footer, and all branded references",
+    "Calendly placeholder URL: https://calendly.com/your-link — used across all Schedule Call / Request a Call Back CTAs",
+    "Floating contact strip repositioned from right-hand side vertical strip to bottom-center horizontal bar (single line: phone | email | Request a Call Back)"
   ],
   "known_issues": [],
-  "isFixRequest": false,
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-build-a-single-page-react-frontend-with-7-sections-in-this-order-hero-positioning-services-pricing-about-strategy-call-cta-and-why-choose-use-a-sticky-top-navigation-bar-with-the-consultant-name-logo-and-a-book-call-cta-link-that-scrolls-to-the-strategy-call-section-all-sections-must-be-full-width-with-generous-vertical-padding-and-a-consistent-dark-blue-near-black-background-0a0f1e-or-similar",
@@ -188,6 +190,214 @@
         "REQ-22"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-footer-component-to-add-three-new-lines-below-the-existing-brand-line-1-serving-clients-globally-usa-uk-canada-australia-2-operating-globally-across-us-uk-time-zones-3-india-based-amazon-growth-consultant-working-with-usa-uk-brands-globally-style-all-three-lines-in-light-gray-muted-text-smaller-than-the-brand-name-but-clearly-readable",
+      "title": "Update the Footer component to add three new lines below the existing brand line: (1) 'Serving clients globally — USA 🇺🇸 | UK 🇬🇧 | Canada 🇨🇦 | Australia 🇦🇺', (2) 'Operating globally across US & UK time zones', (3) 'India-based Amazon Growth Consultant working with USA & UK brands globally.' Style all three lines in light gray/muted text, smaller than the brand name but clearly readable.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-two-floating-animated-scroll-arrow-buttons-to-the-page-one-anchored-to-the-bottom-right-corner-pointing-upward-scroll-to-top-and-one-anchored-to-the-bottom-right-corner-slightly-above-the-up-arrow-pointing-downward-scroll-to-bottom-both-arrows-should-be-gold-styled-circular-buttons-with-a-gentle-bounce-animation-clicking-the-up-arrow-scrolls-to-the-top-of-the-page-clicking-the-down-arrow-scrolls-to-the-bottom-both-buttons-should-appear-only-after-the-user-has-scrolled-past-the-hero-section",
+      "title": "Add two floating animated scroll arrow buttons to the page: one anchored to the bottom-right corner pointing upward (scroll to top) and one anchored to the bottom-right corner (slightly above the up arrow) pointing downward (scroll to bottom). Both arrows should be gold-styled circular buttons with a gentle bounce animation. Clicking the up arrow scrolls to the top of the page; clicking the down arrow scrolls to the bottom. Both buttons should appear only after the user has scrolled past the hero section.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-whatsapp-cta-button-href-in-the-strategycallsection-and-any-other-location-on-the-page-where-the-whatsapp-link-appears-from-https-wa-me-to-https-wa-me-918766936874",
+      "title": "Update the WhatsApp CTA button href in the StrategyCallSection (and any other location on the page where the WhatsApp link appears) from 'https://wa.me/' to 'https://wa.me/918766936874'.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-the-entire-page-for-very-small-text-font-sizes-below-14px-and-small-icons-below-18px-and-increase-them-slightly-to-improve-readability-also-increase-the-prosellers-logo-brand-text-size-in-the-navigation-bar-by-approximately-20-25-compared-to-current-size",
+      "title": "Audit the entire page for very small text (font sizes below 14px) and small icons (below 18px) and increase them slightly to improve readability. Also increase the ProSellers logo/brand text size in the Navigation bar by approximately 20–25% compared to current size.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-floating-vertical-sticky-side-strip-component-that-appears-on-the-right-side-of-the-screen-after-the-user-scrolls-past-the-hero-section-the-strip-should-contain-three-contact-items-stacked-vertically-1-phone-number-display-2-email-address-3-request-a-call-back-text-link-pointing-to-https-calendly-com-your-link-style-the-strip-with-a-dark-semi-transparent-glassmorphism-background-a-gold-left-border-accent-and-subtle-hover-effects-on-mobile-hide-the-strip-or-collapse-it-to-a-minimal-icon-add-this-strip-to-app-tsx",
+      "title": "Create a floating vertical sticky side strip component that appears on the right side of the screen after the user scrolls past the hero section. The strip should contain three contact items stacked vertically: (1) Phone number display, (2) Email address, (3) 'Request a Call Back' text link pointing to 'https://calendly.com/your-link'. Style the strip with a dark semi-transparent glassmorphism background, a gold left border accent, and subtle hover effects. On mobile, hide the strip or collapse it to a minimal icon. Add this strip to App.tsx.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-howweworksection-component-and-add-it-to-app-tsx-after-the-servicessection-the-section-heading-should-be-our-4-step-growth-framework-display-four-steps-as-an-animated-horizontal-timeline-or-vertical-step-flow-1-deep-account-audit-2-profit-gap-analysis-3-strategic-scaling-plan-4-ongoing-optimization-monitoring-each-step-should-have-a-gold-accented-step-number-a-short-description-a-lucide-icon-and-a-connecting-animated-line-or-arrow-between-steps-apply-scroll-triggered-entrance-animations-with-stagger",
+      "title": "Create a new 'HowWeWorkSection' component and add it to App.tsx after the ServicesSection. The section heading should be 'Our 4-Step Growth Framework'. Display four steps as an animated horizontal timeline or vertical step flow: (1) 'Deep Account Audit', (2) 'Profit Gap Analysis', (3) 'Strategic Scaling Plan', (4) 'Ongoing Optimization & Monitoring'. Each step should have a gold-accented step number, a short description, a Lucide icon, and a connecting animated line or arrow between steps. Apply scroll-triggered entrance animations with stagger.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-trustsecuritysection-component-and-add-it-to-app-tsx-after-the-howweworksection-section-heading-trust-security-display-four-trust-points-as-glassmorphism-cards-with-gold-lucide-icons-1-confidential-handling-of-account-data-2-nda-available-upon-request-3-secure-payment-methods-paypal-wise-4-direct-expert-communication-apply-scroll-triggered-staggered-card-entrance-animations",
+      "title": "Create a new 'TrustSecuritySection' component and add it to App.tsx after the HowWeWorkSection. Section heading: 'Trust & Security'. Display four trust points as glassmorphism cards with gold Lucide icons: (1) 'Confidential handling of account data', (2) 'NDA available upon request', (3) 'Secure payment methods — PayPal / Wise', (4) 'Direct expert communication'. Apply scroll-triggered staggered card entrance animations.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-globalservicesection-component-and-add-it-to-app-tsx-after-the-trustsecuritysection-section-heading-serving-amazon-sellers-globally-display-four-country-cards-or-tiles-each-showing-a-large-flag-emoji-and-country-name-united-states-united-kingdom-canada-australia-use-glassmorphism-card-styling-with-gold-border-accents-apply-scroll-triggered-entrance-animations",
+      "title": "Create a new 'GlobalServiceSection' component and add it to App.tsx after the TrustSecuritySection. Section heading: 'Serving Amazon Sellers Globally'. Display four country cards or tiles, each showing a large flag emoji and country name: 🇺🇸 United States, 🇬🇧 United Kingdom, 🇨🇦 Canada, 🇦🇺 Australia. Use glassmorphism card styling with gold border accents. Apply scroll-triggered entrance animations.",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-faqsection-component-and-add-it-to-app-tsx-after-the-globalservicesection-section-heading-frequently-asked-questions-implement-an-accordion-style-faq-with-all-18-q-a-pairs-provided-by-the-user-use-smooth-animated-expand-collapse-transitions-for-each-item-each-row-should-show-a-gold-toggle-icon-that-rotates-on-open-add-subtle-scroll-triggered-fade-in-for-the-section-use-a-space-saving-single-column-accordion-layout-style-consistently-with-the-dark-gold-design-system-the-18-questions-and-full-answer-texts-are-1-how-do-you-approach-amazon-account-growth-strategically-rather-than-tactically-2-how-do-you-handle-high-acos-or-low-profitability-accounts-3-what-level-of-access-do-you-require-to-manage-an-account-effectively-4-how-do-you-ensure-account-safety-and-policy-compliance-5-do-you-work-with-venture-backed-or-high-revenue-brands-6-how-do-you-measure-success-for-your-clients-7-what-makes-your-consulting-model-different-from-large-agencies-8-can-you-work-alongside-our-in-house-team-9-how-do-you-approach-new-product-launches-10-how-do-you-manage-communication-across-time-zones-11-what-level-of-involvement-is-required-from-the-client-12-do-you-take-equity-or-performance-based-compensation-13-how-do-you-handle-multiple-marketplaces-usa-uk-canada-14-what-happens-during-the-first-30-days-of-engagement-15-how-do-you-maintain-confidentiality-and-data-security-16-do-you-work-with-aggregators-or-multi-brand-portfolios-17-can-you-assist-in-preparing-an-account-for-sale-or-investment-18-how-selective-is-your-client-onboarding-process-full-answer-text-for-each-question-must-be-included-verbatim-from-the-user-s-message",
+      "title": "Create a new 'FAQSection' component and add it to App.tsx after the GlobalServiceSection. Section heading: 'Frequently Asked Questions'. Implement an accordion-style FAQ with all 18 Q&A pairs provided by the user. Use smooth animated expand/collapse transitions for each item. Each row should show a gold '+' / '×' toggle icon that rotates on open. Add subtle scroll-triggered fade-in for the section. Use a space-saving single-column accordion layout. Style consistently with the dark gold design system. The 18 questions and full answer texts are: (1) How do you approach Amazon account growth strategically rather than tactically? (2) How do you handle high ACOS or low profitability accounts? (3) What level of access do you require to manage an account effectively? (4) How do you ensure account safety and policy compliance? (5) Do you work with venture-backed or high-revenue brands? (6) How do you measure success for your clients? (7) What makes your consulting model different from large agencies? (8) Can you work alongside our in-house team? (9) How do you approach new product launches? (10) How do you manage communication across time zones? (11) What level of involvement is required from the client? (12) Do you take equity or performance-based compensation? (13) How do you handle multiple marketplaces (USA, UK, Canada)? (14) What happens during the first 30 days of engagement? (15) How do you maintain confidentiality and data security? (16) Do you work with aggregators or multi-brand portfolios? (17) Can you assist in preparing an account for sale or investment? (18) How selective is your client onboarding process? Full answer text for each question must be included verbatim from the user's message.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-comparisonsection-component-and-add-it-to-app-tsx-after-the-faqsection-section-heading-why-not-us-agencies-display-a-two-column-comparison-table-or-card-layout-left-column-us-agency-1-500-3-000-month-junior-account-managers-high-volume-indirect-communication-right-column-prosellers-global-highlighted-in-gold-from-500-month-direct-expert-access-limited-clients-personalized-strategy-below-the-comparison-add-the-tagline-same-performance-focus-direct-expert-support-the-prosellers-column-should-be-visually-elevated-with-a-gold-border-and-glow-apply-scroll-triggered-entrance-animation",
+      "title": "Create a new 'ComparisonSection' component and add it to App.tsx after the FAQSection. Section heading: 'Why Not US Agencies?'. Display a two-column comparison table or card layout: Left column — 'US Agency': '$1,500–$3,000/month', junior account managers, high volume, indirect communication. Right column — 'ProSellers Global' (highlighted in gold): 'From $500/month', direct expert access, limited clients, personalized strategy. Below the comparison, add the tagline: 'Same performance focus. Direct expert support.' The ProSellers column should be visually elevated with a gold border and glow. Apply scroll-triggered entrance animation.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-leadmagnetsection-component-and-add-it-to-app-tsx-after-the-comparisonsection-section-heading-free-download-7-profit-killers-in-amazon-ppc-display-a-short-description-discover-the-7-most-common-mistakes-that-drain-amazon-ppc-budgets-and-how-to-fix-them-download-your-free-guide-now-include-an-email-input-field-and-a-gold-cta-button-labeled-get-free-pdf-the-form-should-be-static-ui-only-with-no-backend-on-submit-show-a-simple-success-message-like-thank-you-check-your-email-for-the-download-link-style-with-glassmorphism-card-gold-border-consistent-with-the-design-system-apply-scroll-triggered-fade-in-animation",
+      "title": "Create a new 'LeadMagnetSection' component and add it to App.tsx after the ComparisonSection. Section heading: 'Free Download: 7 Profit Killers in Amazon PPC'. Display a short description: 'Discover the 7 most common mistakes that drain Amazon PPC budgets — and how to fix them. Download your free guide now.' Include an email input field and a gold CTA button labeled 'Get Free PDF'. The form should be static/UI-only with no backend — on submit, show a simple success message like 'Thank you! Check your email for the download link.' Style with glassmorphism card, gold border, consistent with the design system. Apply scroll-triggered fade-in animation.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-calendly-placeholder-links-across-the-entire-site-to-use-https-calendly-com-your-link-this-includes-the-schedule-call-now-button-in-strategycallsection-the-request-a-call-back-link-in-the-new-floating-vertical-side-strip-the-book-call-cta-in-navigation-and-any-other-cta-buttons-that-reference-booking-or-scheduling-a-call-also-ensure-the-calendly-placeholder-box-in-strategycallsection-is-still-visible-and-styled-correctly",
+      "title": "Update all Calendly placeholder links across the entire site to use 'https://calendly.com/your-link'. This includes: the Schedule Call Now button in StrategyCallSection, the 'Request a Call Back' link in the new floating vertical side strip, the Book Call CTA in Navigation, and any other CTA buttons that reference booking or scheduling a call. Also ensure the Calendly placeholder box in StrategyCallSection is still visible and styled correctly.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-navigation-bar-to-add-links-for-all-newly-added-sections-how-we-work-faq-and-global-or-equivalent-section-id-labels-ensure-smooth-scroll-anchors-are-set-correctly-for-all-new-section-ids-update-the-mobile-hamburger-menu-to-include-these-new-links",
+      "title": "Update the Navigation bar to add links for all newly added sections: 'How We Work', 'FAQ', and 'Global' (or equivalent section ID labels). Ensure smooth-scroll anchors are set correctly for all new section IDs. Update the mobile hamburger menu to include these new links.",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-floatingsidestrip-component-to-reposition-it-from-a-fixed-right-side-vertical-strip-to-a-fixed-bottom-center-horizontal-bar-the-three-contact-items-phone-number-email-address-and-request-a-call-back-link-href-https-calendly-com-your-link-should-all-display-on-a-single-horizontal-line-within-a-compact-bar-pinned-to-the-bottom-center-of-the-screen-the-bar-should-retain-the-dark-semi-transparent-glassmorphism-background-and-gold-accent-border-now-as-a-top-border-instead-of-a-left-border-keep-the-same-scroll-triggered-visibility-appears-after-scrolling-past-the-hero-section-on-mobile-the-bar-should-remain-visible-but-may-condense-to-icons-only-or-a-minimal-single-line-layout-update-app-tsx-if-any-layout-padding-adjustments-are-needed-to-prevent-the-bar-from-overlapping-page-content",
+      "title": "Update the FloatingSideStrip component to reposition it from a fixed right-side vertical strip to a fixed bottom-center horizontal bar. The three contact items — phone number, email address, and 'Request a Call Back' link (href: 'https://calendly.com/your-link') — should all display on a single horizontal line within a compact bar pinned to the bottom center of the screen. The bar should retain the dark semi-transparent glassmorphism background and gold accent border (now as a top border instead of a left border). Keep the same scroll-triggered visibility (appears after scrolling past the hero section). On mobile, the bar should remain visible but may condense to icons only or a minimal single-line layout. Update App.tsx if any layout padding adjustments are needed to prevent the bar from overlapping page content.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-faqsection-component-to-display-the-18-accordion-items-in-a-2-column-grid-layout-so-that-2-questions-appear-side-by-side-in-each-row-resulting-in-9-rows-for-18-faqs-on-mobile-the-layout-must-collapse-to-a-single-column-stack-each-accordion-item-should-retain-its-existing-expand-collapse-animation-and-gold-toggle-icon-behavior",
+      "title": "Update the FAQSection component to display the 18 accordion items in a 2-column grid layout, so that 2 questions appear side by side in each row (resulting in 9 rows for 18 FAQs). On mobile, the layout must collapse to a single-column stack. Each accordion item should retain its existing expand/collapse animation and gold toggle icon behavior.",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-flagstripsection-component-and-insert-it-in-app-tsx-immediately-after-the-herosection-before-the-problemsection-the-strip-must-display-flags-for-all-14-major-amazon-marketplace-countries-in-a-single-continuous-horizontal-row-usa-uk-canada-australia-germany-japan-france-italy-spain-uae-india-mexico-brazil-singapore-implement-an-infinite-horizontal-scroll-slide-animation-using-css-keyframes-so-the-flag-row-scrolls-continuously-left-in-a-seamless-loop-duplicate-the-flag-list-so-the-loop-is-gapless-each-flag-item-must-show-a-large-emoji-flag-and-the-country-name-in-small-muted-gold-silver-text-below-it-apply-a-css-flutter-wave-animation-e-g-a-gentle-vertical-sine-wave-oscillation-using-a-css-translate-y-keyframe-to-each-individual-flag-emoji-with-staggered-animation-delay-values-so-flags-appear-to-flutter-at-different-phases-the-strip-background-should-be-a-slightly-lighter-dark-tone-e-g-0d1526-or-use-a-very-subtle-gold-top-and-bottom-border-to-visually-separate-it-from-the-hero-the-strip-should-be-full-width-with-no-horizontal-overflow-scroll-bar-visible-use-overflow-hidden-on-the-container-the-component-should-be-purely-css-react-with-no-external-libraries",
+      "title": "Create a new 'FlagStripSection' component and insert it in App.tsx immediately after the HeroSection (before the ProblemSection). The strip must display flags for all 14 major Amazon marketplace countries in a single continuous horizontal row: 🇺🇸 USA, 🇬🇧 UK, 🇨🇦 Canada, 🇦🇺 Australia, 🇩🇪 Germany, 🇯🇵 Japan, 🇫🇷 France, 🇮🇹 Italy, 🇪🇸 Spain, 🇦🇪 UAE, 🇮🇳 India, 🇲🇽 Mexico, 🇧🇷 Brazil, 🇸🇬 Singapore. Implement an infinite horizontal scroll/slide animation using CSS keyframes so the flag row scrolls continuously left in a seamless loop (duplicate the flag list so the loop is gapless). Each flag item must show a large emoji flag and the country name in small muted gold/silver text below it. Apply a CSS flutter/wave animation (e.g., a gentle vertical sine-wave oscillation using a CSS translate-Y keyframe) to each individual flag emoji with staggered animation-delay values so flags appear to flutter at different phases. The strip background should be a slightly lighter dark tone (e.g., #0D1526) or use a very subtle gold top and bottom border to visually separate it from the hero. The strip should be full-width with no horizontal overflow scroll bar visible (use overflow: hidden on the container). The component should be purely CSS/React with no external libraries.",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-vertical-padding-and-margins-between-all-page-sections-across-the-entire-landing-page-for-a-tighter-more-compact-flow-target-section-padding-to-be-noticeably-smaller-than-the-current-generous-spacing-while-still-maintaining-visual-separation-this-applies-to-all-sections-including-hero-flagstrip-problem-services-howwework-trustsecurity-pricing-casestudies-testimonials-about-whychoose-globalservice-faq-comparison-leadmagnet-and-strategycall",
+      "title": "Reduce vertical padding and margins between all page sections across the entire landing page for a tighter, more compact flow. Target section padding to be noticeably smaller than the current generous spacing, while still maintaining visual separation. This applies to all sections including Hero, FlagStrip, Problem, Services, HowWeWork, TrustSecurity, Pricing, CaseStudies, Testimonials, About, WhyChoose, GlobalService, FAQ, Comparison, LeadMagnet, and StrategyCall.",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-herosection-tsx-increase-the-number-of-animated-floating-dot-particles-on-the-canvas-background-and-increase-their-movement-speed-the-particle-density-should-be-noticeably-higher-than-the-current-implementation-and-each-particle-should-move-faster-creating-a-more-dynamic-and-energetic-animated-backdrop-behind-the-hero-content",
+      "title": "In HeroSection.tsx, increase the number of animated floating-dot particles on the canvas background and increase their movement speed. The particle density should be noticeably higher than the current implementation, and each particle should move faster, creating a more dynamic and energetic animated backdrop behind the hero content.",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-flagstripsection-tsx-fix-the-country-name-labels-that-are-rendering-as-small-squares-tofu-missing-characters-for-short-country-names-replace-any-approach-that-relies-on-abbreviated-text-or-non-rendering-characters-with-explicit-spelled-out-country-name-strings-rendered-as-plain-html-text-ensure-all-14-country-names-display-correctly-usa-uk-canada-australia-germany-japan-france-italy-spain-uae-india-mexico-brazil-singapore-with-no-squares-or-missing-characters-on-any-browser",
+      "title": "In FlagStripSection.tsx, fix the country name labels that are rendering as small squares (tofu/missing characters) for short country names. Replace any approach that relies on abbreviated text or non-rendering characters with explicit spelled-out country name strings rendered as plain HTML text. Ensure all 14 country names display correctly: USA, UK, Canada, Australia, Germany, Japan, France, Italy, Spain, UAE, India, Mexico, Brazil, Singapore — with no squares or missing characters on any browser.",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-servicessection-tsx-increase-the-font-size-of-the-title-heading-text-on-all-four-service-category-cards-amazon-growth-management-brand-development-emergency-services-ebay-management-the-titles-should-be-noticeably-larger-and-more-prominent-improving-hierarchy-and-readability-within-each-card",
+      "title": "In ServicesSection.tsx, increase the font size of the title/heading text on all four service category cards ('Amazon Growth & Management', 'Brand Development', 'Emergency Services', 'eBay Management'). The titles should be noticeably larger and more prominent, improving hierarchy and readability within each card.",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-faqsection-tsx-to-display-the-18-accordion-items-in-a-3-column-grid-layout-so-that-3-questions-appear-side-by-side-in-each-row-resulting-in-6-rows-for-18-faqs-on-tablet-medium-breakpoint-the-layout-should-collapse-to-2-columns-on-mobile-the-layout-must-collapse-to-a-single-column-stack-each-accordion-item-must-retain-its-existing-expand-collapse-animation-and-gold-toggle-icon-behavior",
+      "title": "Update FAQSection.tsx to display the 18 accordion items in a 3-column grid layout, so that 3 questions appear side by side in each row (resulting in 6 rows for 18 FAQs). On tablet (medium breakpoint), the layout should collapse to 2 columns. On mobile, the layout must collapse to a single-column stack. Each accordion item must retain its existing expand/collapse animation and gold toggle icon behavior.",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-reusable-sectionconnector-component-that-renders-a-centered-blinking-pulsing-gold-dot-element-to-be-placed-at-the-visual-boundary-between-every-two-adjacent-page-sections-the-dot-should-use-a-gold-color-c9a84c-with-a-css-keyframe-pulse-ping-animation-similar-to-a-radar-ping-an-inner-solid-dot-plus-an-expanding-outer-ring-that-fades-out-the-connector-should-be-positioned-so-it-sits-exactly-at-the-join-line-between-sections-vertically-centered-at-the-boundary-using-a-negative-margin-or-absolute-positioning-so-it-overlaps-the-section-boundary-without-adding-extra-vertical-space-the-component-should-be-purely-decorative-full-width-and-zero-height-in-layout-terms-e-g-using-position-relative-with-overflow-visible-or-a-zero-height-wrapper-with-overflow-visible-insert-a-sectionconnector-instance-in-app-tsx-between-every-adjacent-pair-of-sections-after-herosection-flagstripsection-problemsection-servicessection-howweworksection-trustsecuritysection-pricingsection-casestudiessection-testimonialssection-aboutsection-whychoosesection-globalservicesection-faqsection-comparisonsection-leadmagnetsection-i-e-between-every-consecutive-pair-of-sections-before-strategycallsection-the-animation-should-include-a-solid-inner-circle-8-10px-diameter-a-pulsing-outer-ring-that-expands-from-the-center-and-fades-to-transparent-on-each-pulse-cycle-animation-duration-2s-infinite-loop-and-an-optional-subtle-gold-glow-box-shadow-the-connector-should-be-visible-against-both-dark-section-backgrounds",
+      "title": "Create a reusable 'SectionConnector' component that renders a centered blinking/pulsing gold dot element to be placed at the visual boundary between every two adjacent page sections. The dot should use a gold color (#C9A84C) with a CSS keyframe pulse/ping animation (similar to a radar ping: an inner solid dot plus an expanding outer ring that fades out). The connector should be positioned so it sits exactly at the join line between sections — vertically centered at the boundary — using a negative margin or absolute positioning so it overlaps the section boundary without adding extra vertical space. The component should be purely decorative, full-width, and zero-height in layout terms (e.g., using `position: relative` with `overflow: visible` or a zero-height wrapper with `overflow: visible`). Insert a SectionConnector instance in App.tsx between every adjacent pair of sections: after HeroSection, FlagStripSection, ProblemSection, ServicesSection, HowWeWorkSection, TrustSecuritySection, PricingSection, CaseStudiesSection, TestimonialsSection, AboutSection, WhyChooseSection, GlobalServiceSection, FAQSection, ComparisonSection, LeadMagnetSection (i.e., between every consecutive pair of sections, before StrategyCallSection). The animation should include: a solid inner circle (8–10px diameter), a pulsing outer ring that expands from the center and fades to transparent on each pulse cycle (animation duration ~2s, infinite loop), and an optional subtle gold glow (box-shadow). The connector should be visible against both dark section backgrounds.",
+      "reqIds": [
+        "REQ-44"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-flagstripsection-tsx-fix-the-country-name-labels-that-render-as-small-squares-tofu-missing-characters-on-desktop-and-laptop-browsers-ensure-each-of-the-14-country-names-is-defined-as-a-fully-explicit-hard-coded-plain-string-in-the-component-s-data-array-usa-uk-canada-australia-germany-japan-france-italy-spain-uae-india-mexico-brazil-singapore-with-no-reliance-on-unicode-abbreviations-character-codes-or-any-method-that-may-fail-to-render-on-desktop-browsers-render-each-name-as-a-standard-jsx-text-node-e-g-inside-a-span-or-p-the-fix-must-ensure-all-14-names-display-correctly-on-all-major-desktop-and-laptop-browsers-chrome-firefox-safari-edge-as-well-as-on-mobile-with-zero-square-tofu-characters",
+      "title": "In FlagStripSection.tsx, fix the country name labels that render as small squares (tofu/missing characters) on desktop and laptop browsers. Ensure each of the 14 country names is defined as a fully explicit, hard-coded plain string in the component's data array — 'USA', 'UK', 'Canada', 'Australia', 'Germany', 'Japan', 'France', 'Italy', 'Spain', 'UAE', 'India', 'Mexico', 'Brazil', 'Singapore' — with no reliance on Unicode abbreviations, character codes, or any method that may fail to render on desktop browsers. Render each name as a standard JSX text node (e.g., inside a <span> or <p>). The fix must ensure all 14 names display correctly on all major desktop and laptop browsers (Chrome, Firefox, Safari, Edge) as well as on mobile, with zero square/tofu characters.",
+      "reqIds": [
+        "REQ-45"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rewrite-flagstripsection-tsx-so-that-the-infinite-horizontal-scroll-slide-animation-works-correctly-and-seamlessly-the-component-must-1-define-the-14-country-names-as-fully-explicit-hard-coded-plain-string-literals-in-the-data-array-usa-uk-canada-australia-germany-japan-france-italy-spain-uae-india-mexico-brazil-singapore-with-no-unicode-abbreviations-character-codes-or-shorthand-that-could-fail-to-render-2-render-each-country-name-as-a-standard-jsx-text-node-inside-a-span-or-p-element-so-all-14-names-display-correctly-on-chrome-firefox-safari-and-edge-on-desktop-laptop-and-mobile-with-zero-square-tofu-characters-3-implement-the-infinite-scroll-by-duplicating-the-flag-list-in-the-dom-and-using-a-css-keyframes-translatex-animation-so-the-loop-is-completely-gapless-with-no-visible-jump-4-apply-the-css-flutter-wave-oscillation-translatey-sine-wave-keyframe-to-each-individual-flag-emoji-with-staggered-animation-delay-values-5-use-overflow-hidden-on-the-outer-container-so-no-horizontal-scrollbar-is-ever-visible",
+      "title": "Rewrite FlagStripSection.tsx so that the infinite horizontal scroll/slide animation works correctly and seamlessly. The component must: (1) define the 14 country names as fully explicit, hard-coded plain string literals in the data array — 'USA', 'UK', 'Canada', 'Australia', 'Germany', 'Japan', 'France', 'Italy', 'Spain', 'UAE', 'India', 'Mexico', 'Brazil', 'Singapore' — with no Unicode abbreviations, character codes, or shorthand that could fail to render; (2) render each country name as a standard JSX text node inside a <span> or <p> element so all 14 names display correctly on Chrome, Firefox, Safari, and Edge on desktop, laptop, and mobile with zero square/tofu characters; (3) implement the infinite scroll by duplicating the flag list in the DOM and using a CSS @keyframes translateX animation so the loop is completely gapless with no visible jump; (4) apply the CSS flutter/wave oscillation (translateY sine-wave keyframe) to each individual flag emoji with staggered animation-delay values; (5) use overflow: hidden on the outer container so no horizontal scrollbar is ever visible.",
+      "reqIds": [
+        "REQ-46"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-completely-rewrite-flagstripsection-tsx-from-scratch-using-a-fundamentally-different-implementation-approach-to-fix-all-rendering-issues-1-define-the-14-country-objects-as-a-javascript-array-where-each-object-has-an-emoji-string-the-flag-emoji-character-and-a-name-string-that-is-a-fully-explicit-hard-coded-plain-string-literal-usa-uk-canada-australia-germany-japan-france-italy-spain-uae-india-mexico-brazil-singapore-with-zero-reliance-on-unicode-abbreviations-character-codes-or-shorthand-2-render-each-flag-emoji-inside-a-dedicated-span-element-with-an-explicit-inline-style-setting-font-family-to-apple-color-emoji-segoe-ui-emoji-noto-color-emoji-android-emoji-emojisymbols-sans-serif-to-force-proper-emoji-font-fallback-on-all-browsers-render-each-country-name-as-a-separate-plain-span-jsx-text-node-with-the-string-value-typed-directly-no-template-literals-no-computed-values-no-character-codes-3-implement-the-infinite-horizontal-scroll-by-rendering-the-flag-list-twice-in-the-dom-original-duplicate-inside-a-single-flex-row-container-and-animate-that-container-with-a-css-keyframes-translatex-animation-that-moves-exactly-50-the-width-of-one-full-list-copy-so-the-loop-is-completely-gapless-with-no-visible-jump-4-apply-a-css-keyframes-translatey-flutter-wave-oscillation-to-each-individual-flag-emoji-span-with-staggered-animation-delay-values-e-g-0s-0-15s-0-3s-etc-cycling-through-14-values-so-each-flag-appears-to-flutter-at-a-different-phase-5-set-overflow-hidden-on-the-outermost-container-div-so-no-horizontal-scrollbar-is-ever-visible-6-use-a-strip-background-color-of-0d1526-with-a-subtle-1px-solid-gold-c9a84c-at-low-opacity-top-and-bottom-border-to-visually-separate-it-from-adjacent-sections-all-14-country-names-must-display-correctly-on-chrome-firefox-safari-and-edge-on-desktop-laptop-and-mobile-with-zero-square-tofu-characters",
+      "title": "Completely rewrite FlagStripSection.tsx from scratch using a fundamentally different implementation approach to fix all rendering issues: (1) Define the 14 country objects as a JavaScript array where each object has an 'emoji' string (the flag emoji character) and a 'name' string that is a fully explicit, hard-coded plain string literal — 'USA', 'UK', 'Canada', 'Australia', 'Germany', 'Japan', 'France', 'Italy', 'Spain', 'UAE', 'India', 'Mexico', 'Brazil', 'Singapore' — with zero reliance on Unicode abbreviations, character codes, or shorthand. (2) Render each flag emoji inside a dedicated <span> element with an explicit inline style setting font-family to 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, sans-serif' to force proper emoji font fallback on all browsers. Render each country name as a separate plain <span> JSX text node with the string value typed directly — no template literals, no computed values, no character codes. (3) Implement the infinite horizontal scroll by rendering the flag list twice in the DOM (original + duplicate) inside a single flex row container, and animate that container with a CSS @keyframes translateX animation that moves exactly -50% (the width of one full list copy) so the loop is completely gapless with no visible jump. (4) Apply a CSS @keyframes translateY flutter/wave oscillation to each individual flag emoji <span> with staggered animation-delay values (e.g., 0s, 0.15s, 0.3s, etc. cycling through 14 values) so each flag appears to flutter at a different phase. (5) Set overflow: hidden on the outermost container div so no horizontal scrollbar is ever visible. (6) Use a strip background color of #0D1526 with a subtle 1px solid gold (#C9A84C at low opacity) top and bottom border to visually separate it from adjacent sections. All 14 country names must display correctly on Chrome, Firefox, Safari, and Edge on desktop, laptop, and mobile with zero square/tofu characters.",
+      "reqIds": [
+        "REQ-47"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rewrite-globalservicesection-tsx-to-fix-flag-emoji-rendering-and-country-name-display-issues-define-the-four-country-objects-as-a-javascript-array-where-each-object-has-an-emoji-string-the-flag-emoji-character-and-a-name-string-that-is-a-fully-explicit-hard-coded-plain-string-literal-united-states-united-kingdom-canada-australia-with-zero-reliance-on-unicode-abbreviations-or-character-codes-render-each-flag-emoji-inside-a-dedicated-span-element-with-an-explicit-inline-style-setting-font-family-to-apple-color-emoji-segoe-ui-emoji-noto-color-emoji-android-emoji-emojisymbols-sans-serif-to-force-proper-emoji-font-fallback-on-all-browsers-render-each-country-name-as-a-separate-plain-span-jsx-text-node-with-the-string-value-typed-directly-no-template-literals-no-computed-values-no-character-codes-retain-the-existing-glassmorphism-card-styling-with-gold-border-accents-and-scroll-triggered-entrance-animations-all-four-flag-emojis-and-country-names-must-display-correctly-on-chrome-firefox-safari-and-edge-on-desktop-laptop-and-mobile-with-zero-square-tofu-characters",
+      "title": "Rewrite GlobalServiceSection.tsx to fix flag emoji rendering and country name display issues. Define the four country objects as a JavaScript array where each object has an 'emoji' string (the flag emoji character) and a 'name' string that is a fully explicit, hard-coded plain string literal — 'United States', 'United Kingdom', 'Canada', 'Australia' — with zero reliance on Unicode abbreviations or character codes. Render each flag emoji inside a dedicated <span> element with an explicit inline style setting font-family to 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, sans-serif' to force proper emoji font fallback on all browsers. Render each country name as a separate plain <span> JSX text node with the string value typed directly — no template literals, no computed values, no character codes. Retain the existing glassmorphism card styling with gold border accents and scroll-triggered entrance animations. All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) and country names must display correctly on Chrome, Firefox, Safari, and Edge on desktop, laptop, and mobile with zero square/tofu characters.",
+      "reqIds": [
+        "REQ-48"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -278,6 +488,120 @@
     {
       "id": "AR-15",
       "summary": "Enhanced Strategy Call section with WhatsApp button and email form alongside Calendly placeholder",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Footer update: add 'Serving clients globally — USA | UK | Canada | Australia', timezone line, and India-based positioning line",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Animated floating scroll-to-top and scroll-to-bottom arrows for quick navigation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Update WhatsApp button href to real number +918766936874",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Slightly increase font and icon sizes for very small text elements; increase logo text size in nav",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "'How We Work' section: 4-Step Growth Framework (Deep Account Audit, Profit Gap Analysis, Strategic Scaling Plan, Ongoing Optimization & Monitoring) with animated steps",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Trust & Security section: confidential data handling, NDA available, secure payments (PayPal/Wise), direct expert communication",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Global Service section with country flags: USA, UK, Canada, Australia",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Smart animated FAQ section with all 18 Q&As in space-saving accordion/interactive design with high-animation graphics",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Comparison section: US Agency ($1500-$3000/month) vs ProSellers Global (from $500/month)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Lead Magnet UI: email capture form with download button for '7 Profit Killers in Amazon PPC' PDF (static/placeholder)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Add Calendly placeholder link (https://calendly.com/your-link) to all applicable CTA locations site-wide",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Animated country flags strip below hero section: infinite horizontal scroll with CSS flutter/wave animations for all major Amazon marketplace countries (USA, UK, Canada, Australia, Germany, Japan, France, Italy, Spain, UAE, India, Mexico, Brazil, Singapore)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Reduce gaps/vertical padding between all page sections for more compact flow",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Increase speed and density of animated floating-dot particle background in Hero section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-32",
+      "summary": "Fix flag strip short country names (CA, AU, UAE, MX, etc.) rendering as squares instead of text",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-33",
+      "summary": "Increase font sizes of all 4 service category card titles in the 'What We Do' section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-34",
+      "summary": "Update FAQ layout to 3-column grid (3 FAQs per row) instead of current 2-column",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-35",
+      "summary": "Add animated blinking/pulsing gold spot at the junction between every two sections (section join lines) to act as visual pathway connectors between sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-36",
+      "summary": "Fix GlobalServiceSection flag rendering: apply explicit emoji font-family fallback and hard-coded plain string country names (same fix as FlagStripSection) to resolve tofu/square rendering on all browsers",
       "reqIds": [],
       "status": "pending"
     }

@@ -2,12 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-replace-all-instances-of-the-consultant-brand-name-with-prosellers-across-the-entire-landing-page-update-the-navigation-bar-logo-brand-text-to-prosellers-update-the-footer-to-read-prosellers-amazon-growth-consultant-update-the-html-page-title-in-index-html-to-prosellers-amazon-growth-consultant-and-update-any-other-location-where-the-brand-company-name-appears-as-a-standalone-label-e-g-section-headings-meta-tags-or-branded-taglines-the-consultant-s-personal-name-mayur-sahu-should-remain-unchanged-wherever-it-appears-as-a-person-s-name-about-section-credentials-testimonial-references",
-      "featureTitle": "Replace all instances of the consultant brand name with 'ProSellers' across the entire landing page. Update the Navigation bar logo/brand text to 'ProSellers', update the Footer to read 'ProSellers — Amazon Growth Consultant', update the HTML page title in index.html to 'ProSellers | Amazon Growth Consultant', and update any other location where the brand/company name appears as a standalone label (e.g., section headings, meta tags, or branded taglines). The consultant's personal name 'Mayur Sahu' should remain unchanged wherever it appears as a person's name (About section, credentials, testimonial references).",
+      "featureId": "feature-rewrite-globalservicesection-tsx-to-fix-flag-emoji-rendering-and-country-name-display-issues-define-the-four-country-objects-as-a-javascript-array-where-each-object-has-an-emoji-string-the-flag-emoji-character-and-a-name-string-that-is-a-fully-explicit-hard-coded-plain-string-literal-united-states-united-kingdom-canada-australia-with-zero-reliance-on-unicode-abbreviations-or-character-codes-render-each-flag-emoji-inside-a-dedicated-span-element-with-an-explicit-inline-style-setting-font-family-to-apple-color-emoji-segoe-ui-emoji-noto-color-emoji-android-emoji-emojisymbols-sans-serif-to-force-proper-emoji-font-fallback-on-all-browsers-render-each-country-name-as-a-separate-plain-span-jsx-text-node-with-the-string-value-typed-directly-no-template-literals-no-computed-values-no-character-codes-retain-the-existing-glassmorphism-card-styling-with-gold-border-accents-and-scroll-triggered-entrance-animations-all-four-flag-emojis-and-country-names-must-display-correctly-on-chrome-firefox-safari-and-edge-on-desktop-laptop-and-mobile-with-zero-square-tofu-characters",
+      "featureTitle": "Rewrite GlobalServiceSection.tsx to fix flag emoji rendering and country name display issues. Define the four country objects as a JavaScript array where each object has an 'emoji' string (the flag emoji character) and a 'name' string that is a fully explicit, hard-coded plain string literal — 'United States', 'United Kingdom', 'Canada', 'Australia' — with zero reliance on Unicode abbreviations or character codes. Render each flag emoji inside a dedicated <span> element with an explicit inline style setting font-family to 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, sans-serif' to force proper emoji font fallback on all browsers. Render each country name as a separate plain <span> JSX text node with the string value typed directly — no template literals, no computed values, no character codes. Retain the existing glassmorphism card styling with gold border accents and scroll-triggered entrance animations. All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) and country names must display correctly on Chrome, Firefox, Safari, and Edge on desktop, laptop, and mobile with zero square/tofu characters.",
       "files": [
-        "frontend/index.html",
-        "frontend/src/components/Footer.tsx",
-        "frontend/src/components/Navigation.tsx"
+        "frontend/src/components/GlobalServiceSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,7 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-22"
+        "REQ-48"
       ],
       "confidence": "high"
     }

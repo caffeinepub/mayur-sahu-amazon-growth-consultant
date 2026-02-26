@@ -102,7 +102,7 @@ export default function ProblemSection() {
                     borderRadius: '4px',
                   }}
                 >
-                  <Icon size={20} style={{ color: '#C9A84C' }} />
+                  <Icon size={22} style={{ color: '#C9A84C' }} />
                 </div>
                 <div>
                   <h3

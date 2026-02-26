@@ -4,7 +4,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="px-6 py-10"
+      className="px-6 py-12"
       style={{
         backgroundColor: '#060B17',
         borderTop: '1px solid rgba(201, 168, 76, 0.15)',
@@ -20,10 +20,40 @@ export default function Footer() {
         {/* Brand */}
         <p
           className="font-heading font-light text-center"
-          style={{ color: '#A0A8B8', fontSize: '0.9rem', letterSpacing: '0.05em' }}
+          style={{ color: '#A0A8B8', fontSize: '0.95rem', letterSpacing: '0.05em' }}
         >
           ProSellers — Amazon Growth Consultant
         </p>
+
+        {/* Global serving line */}
+        <p
+          className="font-body text-sm text-center"
+          style={{ color: 'rgba(160, 168, 184, 0.7)' }}
+        >
+          Serving clients globally — USA 🇺🇸 | UK 🇬🇧 | Canada 🇨🇦 | Australia 🇦🇺
+        </p>
+
+        {/* Timezone line */}
+        <p
+          className="font-body text-sm text-center"
+          style={{ color: 'rgba(160, 168, 184, 0.6)' }}
+        >
+          Operating globally across US &amp; UK time zones
+        </p>
+
+        {/* Positioning line */}
+        <p
+          className="font-body text-sm text-center max-w-lg"
+          style={{ color: 'rgba(160, 168, 184, 0.55)' }}
+        >
+          India-based Amazon Growth Consultant working with USA &amp; UK brands globally.
+        </p>
+
+        {/* Divider */}
+        <div
+          className="h-px w-24 my-1"
+          style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)' }}
+        />
 
         {/* Copyright */}
         <p

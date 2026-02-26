@@ -52,14 +52,14 @@ export default function HeroSection() {
     resize();
     window.addEventListener('resize', resize);
 
-    // Init particles
-    particlesRef.current = Array.from({ length: 60 }, () => ({
+    // Init particles — increased count (140) and speed for more energy
+    particlesRef.current = Array.from({ length: 140 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 2 + 0.5,
-      speedX: (Math.random() - 0.5) * 0.3,
-      speedY: (Math.random() - 0.5) * 0.3,
-      opacity: Math.random() * 0.5 + 0.1,
+      size: Math.random() * 2.5 + 0.5,
+      speedX: (Math.random() - 0.5) * 0.85,
+      speedY: (Math.random() - 0.5) * 0.85,
+      opacity: Math.random() * 0.6 + 0.15,
     }));
 
     const draw = () => {
@@ -116,14 +116,14 @@ export default function HeroSection() {
       style={{
         background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201, 168, 76, 0.1) 0%, transparent 70%), linear-gradient(180deg, #0A0F1E 0%, #0D1526 100%)',
         paddingTop: '120px',
-        paddingBottom: '100px',
+        paddingBottom: '60px',
       }}
     >
       {/* Particle canvas */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ opacity: 0.7 }}
+        style={{ opacity: 0.85 }}
       />
 
       {/* Subtle top border accent */}

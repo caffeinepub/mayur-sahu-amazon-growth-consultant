@@ -99,75 +99,60 @@ export default function AboutSection() {
                 style={{
                   display: 'block',
                   borderRadius: '1px',
-                  filter: 'brightness(0.95) contrast(1.05)',
                 }}
               />
               {/* Gold corner accents */}
-              <div
-                className="absolute top-0 left-0 w-8 h-8"
-                style={{ borderTop: '2px solid #C9A84C', borderLeft: '2px solid #C9A84C' }}
-              />
-              <div
-                className="absolute top-0 right-0 w-8 h-8"
-                style={{ borderTop: '2px solid #C9A84C', borderRight: '2px solid #C9A84C' }}
-              />
-              <div
-                className="absolute bottom-0 left-0 w-8 h-8"
-                style={{ borderBottom: '2px solid #C9A84C', borderLeft: '2px solid #C9A84C' }}
-              />
-              <div
-                className="absolute bottom-0 right-0 w-8 h-8"
-                style={{ borderBottom: '2px solid #C9A84C', borderRight: '2px solid #C9A84C' }}
-              />
+              {[
+                { top: 0, left: 0, borderTop: '2px solid #C9A84C', borderLeft: '2px solid #C9A84C' },
+                { top: 0, right: 0, borderTop: '2px solid #C9A84C', borderRight: '2px solid #C9A84C' },
+                { bottom: 0, left: 0, borderBottom: '2px solid #C9A84C', borderLeft: '2px solid #C9A84C' },
+                { bottom: 0, right: 0, borderBottom: '2px solid #C9A84C', borderRight: '2px solid #C9A84C' },
+              ].map((style, i) => (
+                <div
+                  key={i}
+                  className="absolute w-5 h-5"
+                  style={style}
+                />
+              ))}
             </div>
           </div>
 
           {/* Content */}
-          <div
-            ref={rightRef}
-            className="flex-1 text-center md:text-left reveal-right"
-          >
+          <div ref={rightRef} className="flex-1 reveal-right">
             <h3
               className="font-heading font-semibold mb-2"
-              style={{
-                fontSize: 'clamp(2.2rem, 4vw, 3rem)',
-                color: '#FFFFFF',
-                lineHeight: 1.1,
-              }}
+              style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: '#FFFFFF', lineHeight: 1.2 }}
             >
               Mayur Sahu
             </h3>
             <p
-              className="font-body font-light mb-8 tracking-wide"
-              style={{
-                fontSize: '1rem',
-                color: '#C9A84C',
-                letterSpacing: '0.08em',
-              }}
+              className="font-body text-sm tracking-widest uppercase mb-6"
+              style={{ color: '#C9A84C', letterSpacing: '0.15em' }}
             >
-              Amazon & Ecommerce Growth Consultant
+              Amazon Growth Consultant
             </p>
 
-            {/* Divider */}
-            <div
-              className="h-px mb-8 md:w-16 mx-auto md:mx-0"
-              style={{ backgroundColor: 'rgba(201, 168, 76, 0.3)' }}
-            />
+            <p
+              className="font-body font-light leading-relaxed mb-6"
+              style={{ fontSize: '1rem', color: '#A0A8B8', lineHeight: 1.8 }}
+            >
+              With over 12 years in ecommerce, I've helped Amazon sellers across the USA and UK scale their businesses profitably. My approach is direct, data-driven, and focused on long-term results — not vanity metrics.
+            </p>
+
+            <p
+              className="font-body font-light leading-relaxed mb-8"
+              style={{ fontSize: '1rem', color: '#A0A8B8', lineHeight: 1.8 }}
+            >
+              India-based Amazon Growth Consultant working with USA &amp; UK brands globally. I work with a limited number of clients to ensure every brand receives the strategic attention it deserves.
+            </p>
 
             {/* Credentials */}
-            <ul className="flex flex-col gap-4">
-              {credentials.map((cred) => (
-                <li
-                  key={cred}
-                  className="flex items-center md:items-start gap-4 justify-center md:justify-start"
-                >
-                  <CheckCircle
-                    size={16}
-                    className="flex-shrink-0 mt-0.5"
-                    style={{ color: '#C9A84C' }}
-                  />
+            <ul className="flex flex-col gap-3">
+              {credentials.map((cred, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <CheckCircle size={20} style={{ color: '#C9A84C', flexShrink: 0 }} />
                   <span
-                    className="font-body text-sm font-light leading-relaxed"
+                    className="font-body text-sm font-light"
                     style={{ color: '#A0A8B8' }}
                   >
                     {cred}

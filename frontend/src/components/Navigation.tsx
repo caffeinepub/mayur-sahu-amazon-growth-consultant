@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 const navLinks = [
   { label: 'About', id: 'about' },
   { label: 'Services', id: 'services' },
+  { label: 'How We Work', id: 'how-we-work' },
   { label: 'Pricing', id: 'pricing' },
-  { label: 'Case Studies', id: 'case-studies' },
+  { label: 'FAQ', id: 'faq' },
+  { label: 'Global', id: 'global-service' },
   { label: 'Testimonials', id: 'testimonials' },
 ];
 
@@ -42,7 +44,7 @@ export default function Navigation() {
         <div className="flex flex-col cursor-pointer" onClick={() => scrollToSection('hero')}>
           <span
             className="font-heading font-semibold tracking-wide"
-            style={{ color: '#C9A84C', fontSize: '1.2rem', lineHeight: 1.2 }}
+            style={{ color: '#C9A84C', fontSize: '1.6rem', lineHeight: 1.2 }}
           >
             ProSellers
           </span>
@@ -55,7 +57,7 @@ export default function Navigation() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-5">
           {navLinks.map((item) => (
             <button
               key={item.id}
@@ -68,8 +70,10 @@ export default function Navigation() {
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection('strategy-call')}
+          <a
+            href="https://calendly.com/your-link"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body text-sm font-medium px-5 py-2 transition-all duration-200 btn-shimmer"
             style={{
               backgroundColor: '#C9A84C',
@@ -77,18 +81,19 @@ export default function Navigation() {
               border: '1px solid #C9A84C',
               borderRadius: '2px',
               letterSpacing: '0.05em',
+              textDecoration: 'none',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#C9A84C';
+              (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
+              (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#C9A84C';
-              e.currentTarget.style.color = '#0A0F1E';
+              (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#C9A84C';
+              (e.currentTarget as HTMLAnchorElement).style.color = '#0A0F1E';
             }}
           >
             Book Call
-          </button>
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -137,18 +142,23 @@ export default function Navigation() {
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection('strategy-call')}
+          <a
+            href="https://calendly.com/your-link"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body text-sm font-medium px-5 py-2.5 text-center mt-2 btn-shimmer"
             style={{
               backgroundColor: '#C9A84C',
               color: '#0A0F1E',
               borderRadius: '2px',
               letterSpacing: '0.05em',
+              textDecoration: 'none',
+              display: 'block',
             }}
+            onClick={() => setMenuOpen(false)}
           >
             Book Free Strategy Call
-          </button>
+          </a>
         </div>
       )}
     </header>

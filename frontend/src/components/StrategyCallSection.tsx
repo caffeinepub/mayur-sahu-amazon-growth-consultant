@@ -117,9 +117,12 @@ export default function StrategyCallSection() {
                 className="font-body text-sm font-light text-center mb-6"
                 style={{ color: '#A0A8B8' }}
               >
-                Calendly booking will appear here. Add your Calendly link to activate.
+                Click below to book your free 30-minute strategy call.
               </p>
-              <button
+              <a
+                href="https://calendly.com/your-link"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-shimmer font-body font-medium px-8 py-3 transition-all duration-300"
                 style={{
                   backgroundColor: '#C9A84C',
@@ -129,23 +132,25 @@ export default function StrategyCallSection() {
                   borderRadius: '2px',
                   border: '1px solid #C9A84C',
                   boxShadow: '0 0 30px rgba(201, 168, 76, 0.2)',
+                  textDecoration: 'none',
+                  display: 'inline-block',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#C9A84C';
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#C9A84C';
-                  e.currentTarget.style.color = '#0A0F1E';
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#C9A84C';
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#0A0F1E';
                 }}
               >
                 Schedule Call Now
-              </button>
+              </a>
             </div>
 
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/"
+              href="https://wa.me/918766936874"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 py-4 font-body font-medium transition-all duration-300"
@@ -173,11 +178,9 @@ export default function StrategyCallSection() {
           </div>
 
           {/* Right: Email Form */}
-          <div
-            className="glass-card p-8"
-          >
+          <div className="glass-card p-8">
             <div className="flex items-center gap-2 mb-6">
-              <Mail size={18} style={{ color: '#C9A84C' }} />
+              <Mail size={20} style={{ color: '#C9A84C' }} />
               <h3
                 className="font-heading font-semibold"
                 style={{ fontSize: '1.3rem', color: '#FFFFFF' }}
@@ -187,9 +190,7 @@ export default function StrategyCallSection() {
             </div>
 
             {submitted ? (
-              <div
-                className="flex flex-col items-center justify-center py-12 text-center"
-              >
+              <div className="flex flex-col items-center justify-center py-12 text-center">
                 <div
                   className="w-14 h-14 flex items-center justify-center mb-4 rounded-full"
                   style={{
@@ -280,7 +281,7 @@ export default function StrategyCallSection() {
                   </div>
                 </div>
 
-                {/* Amazon Store URL */}
+                {/* Store URL */}
                 <div className="flex flex-col gap-1.5">
                   <label
                     className="font-body text-xs tracking-wide uppercase"
@@ -295,8 +296,8 @@ export default function StrategyCallSection() {
                       style={{ color: 'rgba(201,168,76,0.5)' }}
                     />
                     <input
-                      type="text"
-                      placeholder="amazon.com/stores/your-brand"
+                      type="url"
+                      placeholder="https://amazon.com/your-store"
                       value={formData.storeUrl}
                       onChange={(e) => setFormData({ ...formData, storeUrl: e.target.value })}
                       className="w-full font-body text-sm pl-9 pr-4 py-3 outline-none transition-all duration-200"
@@ -312,28 +313,26 @@ export default function StrategyCallSection() {
                   </div>
                 </div>
 
-                {/* Submit */}
                 <button
                   type="submit"
-                  className="btn-shimmer w-full font-body font-medium py-3.5 mt-2 transition-all duration-300"
+                  className="w-full font-body font-medium py-3.5 mt-2 btn-shimmer transition-all duration-300"
                   style={{
                     backgroundColor: '#C9A84C',
                     color: '#0A0F1E',
-                    fontSize: '0.95rem',
+                    fontSize: '0.9rem',
                     letterSpacing: '0.06em',
                     borderRadius: '2px',
                     border: '1px solid #C9A84C',
-                    boxShadow: '0 0 30px rgba(201, 168, 76, 0.2)',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = 'transparent';
                     e.currentTarget.style.color = '#C9A84C';
-                    e.currentTarget.style.boxShadow = '0 0 40px rgba(201, 168, 76, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 0 30px rgba(201,168,76,0.3)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#C9A84C';
                     e.currentTarget.style.color = '#0A0F1E';
-                    e.currentTarget.style.boxShadow = '0 0 30px rgba(201, 168, 76, 0.2)';
+                    e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
                   Send Message

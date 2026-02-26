@@ -77,13 +77,13 @@ export default function ServicesSection() {
       className="px-6"
       style={{
         backgroundColor: '#0A0F1E',
-        paddingTop: '100px',
-        paddingBottom: '100px',
+        paddingTop: '60px',
+        paddingBottom: '60px',
       }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div ref={headingRef} className="text-center mb-16 reveal">
+        <div ref={headingRef} className="text-center mb-12 reveal">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="h-px w-10" style={{ backgroundColor: '#C9A84C' }} />
             <span
@@ -126,21 +126,21 @@ export default function ServicesSection() {
                     {service.number}
                   </span>
                   <div
-                    className="w-10 h-10 flex items-center justify-center"
+                    className="w-11 h-11 flex items-center justify-center"
                     style={{
                       backgroundColor: 'rgba(201, 168, 76, 0.1)',
                       border: '1px solid rgba(201, 168, 76, 0.25)',
                       borderRadius: '4px',
                     }}
                   >
-                    <Icon size={18} style={{ color: '#C9A84C' }} />
+                    <Icon size={22} style={{ color: '#C9A84C' }} />
                   </div>
                 </div>
 
-                {/* Title */}
+                {/* Title — increased font size for clear hierarchy */}
                 <h3
                   className="font-heading font-semibold mb-4"
-                  style={{ fontSize: '1.2rem', color: '#FFFFFF', lineHeight: 1.3 }}
+                  style={{ fontSize: 'clamp(1.35rem, 2vw, 1.6rem)', color: '#FFFFFF', lineHeight: 1.25 }}
                 >
                   {service.title}
                 </h3>

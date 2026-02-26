@@ -104,14 +104,14 @@ export default function WhyChooseSection() {
               >
                 {/* Icon */}
                 <div
-                  className="w-10 h-10 flex items-center justify-center mb-4 flex-shrink-0"
+                  className="w-11 h-11 flex items-center justify-center mb-4 flex-shrink-0"
                   style={{
                     backgroundColor: 'rgba(201, 168, 76, 0.1)',
                     border: '1px solid rgba(201, 168, 76, 0.25)',
                     borderRadius: '4px',
                   }}
                 >
-                  <Icon size={18} style={{ color: '#C9A84C' }} />
+                  <Icon size={22} style={{ color: '#C9A84C' }} />
                 </div>
 
                 <h3
@@ -121,7 +121,7 @@ export default function WhyChooseSection() {
                   {reason.title}
                 </h3>
                 <p
-                  className="font-body text-xs font-light leading-relaxed"
+                  className="font-body text-sm font-light leading-relaxed"
                   style={{ color: '#A0A8B8' }}
                 >
                   {reason.desc}

@@ -1,53 +1,25 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update branding to ProSellers across the entire landing page",
+  "title": "Fix GlobalServiceSection flag and country name rendering",
   "requirements": [
     {
-      "id": "REQ-22",
-      "summary": "Replace all instances of the consultant brand name with 'ProSellers' across the entire landing page while preserving the personal name 'Mayur Sahu'",
+      "id": "REQ-48",
+      "summary": "Rewrite GlobalServiceSection.tsx to ensure flag emojis and country names render correctly across all browsers by using hard-coded plain string literals for country names and explicit inline font-family styles for flag emoji spans",
       "acceptanceCriteria": [
-        "The Navigation bar logo/brand text displays 'ProSellers'",
-        "The Footer reads 'ProSellers — Amazon Growth Consultant'",
-        "The HTML <title> tag in index.html reads 'ProSellers | Amazon Growth Consultant' or similar",
-        "No stray references to the old brand name remain in any visible UI text",
-        "The personal name 'Mayur Sahu' is preserved unchanged in the About/Founder section and credential lines"
+        "All four flag emojis (🇺🇸 🇬🇧 🇨🇦 🇦🇺) render as visible colored flag images, not squares or boxes, on Chrome, Firefox, Safari, and Edge.",
+        "All four country name labels ('United States', 'United Kingdom', 'Canada', 'Australia') render as readable plain text with zero tofu/square characters on all browsers.",
+        "Each flag emoji span has an explicit inline font-family style including 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji' fallbacks.",
+        "Country name strings are hard-coded plain string literals in the data array — no Unicode character codes or abbreviations used.",
+        "Glassmorphism card styling with gold border accents is retained.",
+        "Scroll-triggered entrance animations are retained and functional.",
+        "The section heading 'Serving Amazon Sellers Globally' remains visible and correctly styled."
       ],
       "file_operations": [
         {
-          "path": "frontend/index.html",
+          "path": "frontend/src/components/GlobalServiceSection.tsx",
           "operation": "modify",
-          "description": "Update the HTML <title> tag to read 'ProSellers | Amazon Growth Consultant' and update any meta tags that reference the brand name"
-        },
-        {
-          "path": "frontend/src/components/Navigation.tsx",
-          "operation": "modify",
-          "description": "Update the logo/brand text in the navigation bar to display 'ProSellers' instead of 'Mayur Sahu' or any previous brand name"
-        },
-        {
-          "path": "frontend/src/components/Footer.tsx",
-          "operation": "modify",
-          "description": "Update the footer text to read 'ProSellers — Amazon Growth Consultant' while preserving any other footer elements and attribution links"
-        },
-        {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "modify",
-          "description": "Review and update any brand name references in the hero section (headings, subheadings, or taglines) to use 'ProSellers' while keeping 'Mayur Sahu' unchanged where it appears as the founder's personal name"
-        },
-        {
-          "path": "frontend/src/components/AboutSection.tsx",
-          "operation": "modify",
-          "description": "Review the About section to ensure 'Mayur Sahu' personal name remains unchanged in the founder profile and credentials, while updating any standalone brand/company name references to 'ProSellers'"
-        },
-        {
-          "path": "frontend/src/components/StrategyCallSection.tsx",
-          "operation": "modify",
-          "description": "Review and update any brand name references in form labels, headings, or call-to-action text to use 'ProSellers' while preserving personal name references"
-        },
-        {
-          "path": "frontend/src/components/TestimonialsSection.tsx",
-          "operation": "modify",
-          "description": "Review testimonial section headings or introductory text for brand name references and update to 'ProSellers' if present, while keeping 'Mayur Sahu' unchanged in testimonial content where it refers to the person"
+          "description": "Rewrite the component to define a JavaScript array of four country objects where each object contains an 'emoji' string property holding the raw flag emoji character (🇺🇸, 🇬🇧, 🇨🇦, 🇦🇺) and a 'name' string property holding the fully explicit hard-coded plain string literal ('United States', 'United Kingdom', 'Canada', 'Australia') with zero reliance on Unicode abbreviations or character codes. Render each flag emoji inside a dedicated <span> element with an explicit inline style object setting fontFamily to 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, sans-serif' to force proper emoji font fallback across all browsers. Render each country name as a separate plain <span> JSX text node with the string value typed directly as a plain literal — no template literals, no computed values, no character codes. Retain the existing glassmorphism card styling with gold border accents, the grid layout, hover scale/shadow animations, and the IntersectionObserver-based scroll-triggered entrance animations with staggered delays. Ensure the section heading 'Serving Amazon Sellers Globally' remains visible and correctly styled. Do not change the card structure, layout logic, or animation behavior beyond what is necessary to fix the flag emoji and country name rendering issues."
         }
       ]
     }
