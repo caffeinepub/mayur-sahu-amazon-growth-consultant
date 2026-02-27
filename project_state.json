@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 29,
-  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu / ProSellers targeting USA & UK brands. Major V4 upgrade in progress with all sections built. Latest change: merging LeadMagnetSection into StrategyCallSection as a 3-box single-row layout (Box 1: Schedule Your Call / Calendly, Box 2: Send a Message / contact form, Box 3: 7 Profit Killers in Amazon PPC / lead magnet). LeadMagnetSection removed as standalone section.",
+  "projectStateVersion": 31,
+  "summary": "Premium Amazon Growth Consultant landing page for Mayur Sahu / ProSellers targeting USA & UK brands. Major V4 upgrade in progress with all sections built. Latest changes being built: (1) replace About section headshot with newly uploaded Mayur Sahu photo (navy blazer, white shirt), (2) add gold crown emoji 👑 before ProSellers brand name in Navigation bar, (3) increase all footer content font sizes for better readability.",
   "architectural_notes": [
     "Dark blue/black theme with gold or white text, minimal layout with lots of whitespace",
     "Premium consultant aesthetic — avoid crowded layout, cheap icons, or too many colors",
@@ -15,6 +15,7 @@
   ],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Edit Images\n- Crop and reframe to a professional portrait headshot with subject centered, navy blue blazer and white shirt clearly visible, framed artwork wall background, optimized for a 400x500px display slot (PixVerse_Image_Effect_prompt_this is my noraml.jpg > mayur-sahu-headshot-new.dim_400x500.png)",
   "existing_features": [
     {
       "id": "feature-build-a-single-page-react-frontend-with-7-sections-in-this-order-hero-positioning-services-pricing-about-strategy-call-cta-and-why-choose-use-a-sticky-top-navigation-bar-with-the-consultant-name-logo-and-a-book-call-cta-link-that-scrolls-to-the-strategy-call-section-all-sections-must-be-full-width-with-generous-vertical-padding-and-a-consistent-dark-blue-near-black-background-0a0f1e-or-similar",
@@ -415,6 +416,30 @@
         "REQ-50"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-in-aboutsection-tsx-replace-the-existing-headshot-image-source-with-the-newly-generated-asset-mayur-sahu-headshot-new-dim-400x500-png-from-frontend-public-assets-generated-all-other-layout-gold-corner-accents-scroll-triggered-slide-in-animations-and-credential-content-must-remain-unchanged",
+      "title": "In AboutSection.tsx, replace the existing headshot image source with the newly generated asset 'mayur-sahu-headshot-new.dim_400x500.png' from frontend/public/assets/generated/. All other layout, gold corner accents, scroll-triggered slide-in animations, and credential content must remain unchanged.",
+      "reqIds": [
+        "REQ-51"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-navigation-tsx-add-a-gold-crown-emoji-immediately-before-the-prosellers-brand-name-text-in-the-logo-brand-area-of-the-navigation-bar-the-crown-must-be-styled-in-gold-c9a84c-and-rendered-inline-with-the-brand-text-all-existing-navigation-links-sticky-behavior-mobile-hamburger-menu-and-book-call-cta-must-remain-unchanged",
+      "title": "In Navigation.tsx, add a gold crown emoji 👑 immediately before the 'ProSellers' brand name text in the logo/brand area of the navigation bar. The crown must be styled in gold (#C9A84C) and rendered inline with the brand text. All existing navigation links, sticky behavior, mobile hamburger menu, and Book Call CTA must remain unchanged.",
+      "reqIds": [
+        "REQ-52"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-footer-tsx-increase-the-font-size-of-all-footer-content-lines-the-brand-line-prosellers-amazon-growth-consultant-the-global-serving-line-serving-clients-globally-usa-uk-canada-australia-the-timezone-line-operating-globally-across-us-uk-time-zones-the-india-based-line-india-based-amazon-growth-consultant-working-with-usa-uk-brands-globally-and-the-copyright-notice-so-they-are-all-noticeably-larger-and-more-readable-than-the-current-size-maintain-the-existing-dark-background-muted-white-text-color-scheme-and-centered-alignment",
+      "title": "In Footer.tsx, increase the font size of all footer content lines — the brand line ('ProSellers — Amazon Growth Consultant'), the global serving line ('Serving clients globally — USA 🇺🇸 | UK 🇬🇧 | Canada 🇨🇦 | Australia 🇦🇺'), the timezone line ('Operating globally across US & UK time zones'), the India-based line ('India-based Amazon Growth Consultant working with USA & UK brands globally.'), and the copyright notice — so they are all noticeably larger and more readable than the current size. Maintain the existing dark background, muted/white text color scheme, and centered alignment.",
+      "reqIds": [
+        "REQ-53"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -619,6 +644,24 @@
     {
       "id": "AR-37",
       "summary": "Merge LeadMagnetSection into StrategyCallSection as 3-box single-row layout: Box 1 (Schedule Your Call/Calendly), Box 2 (Send a Message/contact form), Box 3 (7 Profit Killers/lead magnet). Remove standalone LeadMagnetSection.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-38",
+      "summary": "Replace About section headshot with newly uploaded Mayur Sahu photo (navy blue blazer, white shirt, framed artwork background)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-39",
+      "summary": "Add gold crown emoji 👑 before 'ProSellers' brand name in the Navigation bar logo",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-40",
+      "summary": "Increase all footer content font sizes (brand line, global serving line, timezone line, India-based line, copyright) for better readability",
       "reqIds": [],
       "status": "pending"
     }

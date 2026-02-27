@@ -1,45 +1,54 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Merge LeadMagnetSection into StrategyCallSection as 3-box single-row layout",
+  "title": "Replace About headshot, add crown to ProSellers logo, increase footer font sizes",
   "requirements": [
     {
-      "id": "REQ-49",
-      "summary": "Rewrite StrategyCallSection to display a single-row layout with three side-by-side boxes: Box 1 (Schedule Your Call with Calendly placeholder and CTA buttons), Box 2 (Send a Message contact form), and Box 3 (7 Profit Killers lead magnet with email capture). All boxes use glassmorphism card styling with gold borders. On mobile, boxes stack vertically. Section heading and supporting text remain at the top. Retain section background (#0D1526) and gold accent top border.",
+      "id": "REQ-51",
+      "summary": "Replace the existing headshot image in AboutSection with the newly generated asset mayur-sahu-headshot-new.dim_400x500.png while preserving all layout, animations, and credential content",
       "acceptanceCriteria": [
-        "StrategyCallSection displays three boxes side-by-side in a single row on desktop",
-        "Box 1 contains the Calendly placeholder, Schedule Call Now button (href: https://calendly.com/your-link), and WhatsApp button (href: https://wa.me/918766936874)",
-        "Box 2 contains the contact form with Name, Email, Amazon Store URL fields and Send Message button with existing submission success state",
-        "Box 3 contains the 7 Profit Killers description, email capture form, Get Free PDF button, and success message state",
-        "All three boxes use glassmorphism card styling with gold borders consistent with the site design system",
-        "On mobile, the three boxes stack vertically in order (Box 1, Box 2, Box 3)",
-        "Section heading and supporting text remain visible at the top of the section",
-        "Section background (#0D1526) and gold accent top border are retained",
-        "All existing icons, styling, and form functionality are preserved — no content is lost"
+        "The About / Meet The Founder section displays the new photo of Mayur Sahu (navy blue blazer, white shirt, framed artwork background) instead of the old headshot.",
+        "The image renders correctly in both desktop two-column layout and mobile stacked layout.",
+        "Gold corner accents and scroll-triggered slide-in animations are unaffected."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/StrategyCallSection.tsx",
+          "path": "frontend/src/components/AboutSection.tsx",
           "operation": "modify",
-          "description": "Replace the current two-column layout with a new single-row flexbox/grid layout containing three side-by-side boxes. Box 1: Merge the existing Calendly placeholder (bordered box with 'Calendly scheduling widget will appear here'), the gold 'Schedule Call Now' CTA button (href: https://calendly.com/your-link), and the green WhatsApp 'Chat on WhatsApp' button (href: https://wa.me/918766936874) from the current left column. Box 2: Preserve the existing contact form with Name, Email, and Amazon Store URL fields plus the 'Send Message' submit button and success state from the current right column. Box 3: Import and integrate the full content from LeadMagnetSection.tsx including the '7 Profit Killers in Amazon PPC' heading, description text ('Discover the 7 most common mistakes that drain Amazon PPC budgets — and how to fix them. Download your free guide now.'), email input field, gold 'Get Free PDF' CTA button, and the success message state on submit. Apply glassmorphism card styling (glass-effect class or equivalent with backdrop-blur, rgba background, and gold border accent) to all three boxes, matching the existing design system. Use responsive layout classes (e.g., flex flex-col lg:flex-row gap-8) so boxes stack vertically on mobile and align horizontally on desktop. Retain the section heading 'Book Your Free 30-Minute Amazon Growth Strategy Call' and supporting text at the top of the section. Preserve the section's slightly lighter background (#0D1526) and gold accent top border. Ensure all useState hooks for form submission states are preserved for both Box 2 and Box 3. Maintain all existing icons (CheckCircle, Calendar, MessageSquare, Download, etc.) and their imports."
+          "description": "Update the image source in the headshot image element to reference frontend/public/assets/generated/mayur-sahu-headshot-new.dim_400x500.png instead of the current headshot path. Ensure the image alt text remains descriptive and that all existing gold corner accent overlays, scroll-triggered slide-in animations, and the credential list with CheckCircle icons remain unchanged."
         }
       ]
     },
     {
-      "id": "REQ-50",
-      "summary": "Remove the standalone LeadMagnetSection component from App.tsx (currently positioned after ComparisonSection) and remove its import. Also remove the adjacent SectionConnector instance to avoid orphaned connectors.",
+      "id": "REQ-52",
+      "summary": "Add a gold crown emoji 👑 before the 'ProSellers' brand name in the Navigation bar logo area, styled in gold color",
       "acceptanceCriteria": [
-        "LeadMagnetSection is no longer rendered anywhere in App.tsx",
-        "The LeadMagnetSection import is removed from App.tsx",
-        "The SectionConnector that was adjacent to LeadMagnetSection is removed so no orphaned connector remains",
-        "The page flow reads: ... ComparisonSection → SectionConnector → StrategyCallSection (with no LeadMagnetSection in between)",
-        "No visual gap or broken layout appears where LeadMagnetSection previously existed"
+        "The Navigation bar logo area displays '👑 ProSellers' with the crown emoji rendered in gold color before the brand name.",
+        "The crown appears on both desktop and mobile navigation views.",
+        "All existing navigation links and sticky behavior remain unchanged."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/Navigation.tsx",
           "operation": "modify",
-          "description": "Remove the LeadMagnetSection import statement from the top of the file. Locate the JSX block where LeadMagnetSection is currently rendered (after ComparisonSection) and remove both the <LeadMagnetSection /> component and the SectionConnector instance immediately adjacent to it (either before or after) to prevent an orphaned connector in the page flow. Verify that the remaining section order reads: ... ComparisonSection, SectionConnector, StrategyCallSection, ... with no gaps or duplicate connectors. Ensure no other references to LeadMagnetSection remain in the file."
+          "description": "Add the gold crown emoji 👑 immediately before the 'ProSellers' brand name text in the logo/brand area. Apply inline or className styling to render the crown in gold color (#C9A84C). Ensure the crown appears in both the desktop navigation and the mobile hamburger menu header. All existing navigation links, smooth-scroll behavior, sticky positioning, and the Book Call CTA must remain unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-53",
+      "summary": "Increase font sizes for all footer content lines to improve readability while maintaining the existing dark background, color scheme, and centered alignment",
+      "acceptanceCriteria": [
+        "All footer text lines are visibly larger than before the change.",
+        "The brand name line is the largest, with supporting lines clearly readable at a smaller but still comfortable size.",
+        "The footer retains its dark background, centered layout, and existing text color scheme.",
+        "No footer content is missing or truncated."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Increase the font size of all footer content lines: the brand line ('ProSellers — Amazon Growth Consultant'), the global serving line ('Serving clients globally — USA 🇺🇸 | UK 🇬🇧 | Canada 🇨🇦 | Australia 🇦🇺'), the timezone line ('Operating globally across US & UK time zones'), the India-based line ('India-based Amazon Growth Consultant working with USA & UK brands globally.'), and the copyright notice. The brand line should be the largest, with other lines proportionally larger than current sizes for better readability. Maintain the existing dark background, muted/white text color scheme, centered alignment, and all existing spacing."
         }
       ]
     }

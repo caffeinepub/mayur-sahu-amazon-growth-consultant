@@ -1,72 +1,82 @@
 {
   "kind": "build_request",
-  "title": "Merge LeadMagnetSection into StrategyCallSection as 3-box single-row layout",
+  "title": "Replace About headshot, add crown to ProSellers logo, increase footer font sizes",
   "projectName": "ProSellers",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-49",
-      "text": "Rewrite StrategyCallSection.tsx to replace the current two-column layout with a new single-row layout containing three side-by-side boxes: Box 1 — 'Schedule Your Call' containing the existing Calendly placeholder (bordered box with 'Calendly scheduling widget will appear here' text, styled to match the dark theme), the 'Schedule Call Now' gold CTA button (href: 'https://calendly.com/your-link'), and the WhatsApp 'Chat on WhatsApp' green button (href: 'https://wa.me/918766936874'); Box 2 — 'Send a Message' containing the existing contact form with Name, Email, and Amazon Store URL fields plus a 'Send Message' submit button with the existing submission success state; Box 3 — '7 Profit Killers in Amazon PPC' containing the full content currently in LeadMagnetSection: the description text 'Discover the 7 most common mistakes that drain Amazon PPC budgets — and how to fix them. Download your free guide now.', the email input field, the gold 'Get Free PDF' CTA button, and the existing success message state on submit. All three boxes must use glassmorphism card styling with gold border accents, consistent with the existing design system. On mobile, the three boxes must stack vertically. The section heading 'Book Your Free 30-Minute Amazon Growth Strategy Call' and supporting text must remain at the top of the section. Retain the section's slightly lighter background (#0D1526) and gold accent top border.",
+      "id": "REQ-51",
+      "text": "In AboutSection.tsx, replace the existing headshot image source with the newly generated asset 'mayur-sahu-headshot-new.dim_400x500.png' from frontend/public/assets/generated/. All other layout, gold corner accents, scroll-triggered slide-in animations, and credential content must remain unchanged.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-recent-5",
-          "msg-recent-7"
+          "msg-recent"
         ],
         "quotes": [
-          "merge 7 Profit Killers in Amazon PPC section into the FREE STRATEGY CALL.. like Schedule Your Call in one box.. Send a Message... in another box.. 7 Profit Killers section in 3rd box in one row",
-          "mo keep the same content icons etc.. just places one neside another in 3 boxes.. in one row.. as itstaking more space on page"
+          "yes",
+          "Replace About section headshot with newly uploaded Mayur Sahu photo (navy blue blazer, white shirt, framed artwork background)"
         ]
       },
       "acceptanceCriteria": [
-        "StrategyCallSection displays three boxes side-by-side in a single row on desktop",
-        "Box 1 contains the Calendly placeholder, Schedule Call Now button (href: https://calendly.com/your-link), and WhatsApp button (href: https://wa.me/918766936874)",
-        "Box 2 contains the contact form with Name, Email, Amazon Store URL fields and Send Message button with existing submission success state",
-        "Box 3 contains the 7 Profit Killers description, email capture form, Get Free PDF button, and success message state",
-        "All three boxes use glassmorphism card styling with gold borders consistent with the site design system",
-        "On mobile, the three boxes stack vertically in order (Box 1, Box 2, Box 3)",
-        "Section heading and supporting text remain visible at the top of the section",
-        "Section background (#0D1526) and gold accent top border are retained",
-        "All existing icons, styling, and form functionality are preserved — no content is lost"
+        "The About / Meet The Founder section displays the new photo of Mayur Sahu (navy blue blazer, white shirt, framed artwork background) instead of the old headshot.",
+        "The image renders correctly in both desktop two-column layout and mobile stacked layout.",
+        "Gold corner accents and scroll-triggered slide-in animations are unaffected."
       ]
     },
     {
-      "id": "REQ-50",
-      "text": "Remove the standalone LeadMagnetSection component from App.tsx (currently positioned after ComparisonSection) since its content has been merged into Box 3 of StrategyCallSection. Also remove the SectionConnector instance that was placed immediately before or after LeadMagnetSection in the App.tsx section order. Update the App.tsx import list to remove the LeadMagnetSection import.",
+      "id": "REQ-52",
+      "text": "In Navigation.tsx, add a gold crown emoji 👑 immediately before the 'ProSellers' brand name text in the logo/brand area of the navigation bar. The crown must be styled in gold (#C9A84C) and rendered inline with the brand text. All existing navigation links, sticky behavior, mobile hamburger menu, and Book Call CTA must remain unchanged.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-recent-5",
-          "msg-recent-7"
+          "msg-recent"
         ],
         "quotes": [
-          "The standalone LeadMagnetSection will be removed from its current position (after ComparisonSection) since its content is being merged into Box 3"
+          "crown on the brand name prosellers",
+          "Add gold crown emoji 👑 before 'ProSellers' brand name in the Navigation bar logo"
         ]
       },
       "acceptanceCriteria": [
-        "LeadMagnetSection is no longer rendered anywhere in App.tsx",
-        "The LeadMagnetSection import is removed from App.tsx",
-        "The SectionConnector that was adjacent to LeadMagnetSection is removed so no orphaned connector remains",
-        "The page flow reads: ... ComparisonSection → SectionConnector → StrategyCallSection (with no LeadMagnetSection in between)",
-        "No visual gap or broken layout appears where LeadMagnetSection previously existed"
+        "The Navigation bar logo area displays '👑 ProSellers' with the crown emoji rendered in gold color before the brand name.",
+        "The crown appears on both desktop and mobile navigation views.",
+        "All existing navigation links and sticky behavior remain unchanged."
+      ]
+    },
+    {
+      "id": "REQ-53",
+      "text": "In Footer.tsx, increase the font size of all footer content lines — the brand line ('ProSellers — Amazon Growth Consultant'), the global serving line ('Serving clients globally — USA 🇺🇸 | UK 🇬🇧 | Canada 🇨🇦 | Australia 🇦🇺'), the timezone line ('Operating globally across US & UK time zones'), the India-based line ('India-based Amazon Growth Consultant working with USA & UK brands globally.'), and the copyright notice — so they are all noticeably larger and more readable than the current size. Maintain the existing dark background, muted/white text color scheme, and centered alignment.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "also incrase the all footer content fornt sizes",
+          "Increase all footer content font sizes (brand line, global serving line, timezone line, India-based line, copyright) for better readability"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All footer text lines are visibly larger than before the change.",
+        "The brand name line is the largest, with supporting lines clearly readable at a smaller but still comfortable size.",
+        "The footer retains its dark background, centered layout, and existing text color scheme.",
+        "No footer content is missing or truncated."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/",
-    "All existing content, icons, and form functionality from both StrategyCallSection and LeadMagnetSection must be preserved — nothing should be lost, only consolidated",
-    "The email capture form in Box 3 must remain static/UI-only with no backend wiring",
-    "WhatsApp href must remain https://wa.me/918766936874",
-    "Calendly links must remain https://calendly.com/your-link"
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui/.",
+    "Do not alter any section other than AboutSection, Navigation, and Footer.",
+    "The consultant's personal name 'Mayur Sahu' must remain unchanged everywhere it appears."
   ],
   "nonGoals": [
-    "Wiring any form to a backend email service",
-    "Adding new content or icons not already present in the existing components",
-    "Changing the design system, color palette, or global styles",
-    "Modifying any other section components beyond StrategyCallSection and App.tsx"
+    "Adding the photo to any section other than the About / Meet The Founder section.",
+    "Changing any navigation links, section order, or page layout.",
+    "Modifying any backend files."
   ],
   "imageRequirements": {
     "required": [],
-    "edits": []
+    "edits": [
+      "Crop and reframe to a professional portrait headshot with subject centered, navy blue blazer and white shirt clearly visible, framed artwork wall background, optimized for a 400x500px display slot (PixVerse_Image_Effect_prompt_this is my noraml.jpg > mayur-sahu-headshot-new.dim_400x500.png)"
+    ]
   }
 }

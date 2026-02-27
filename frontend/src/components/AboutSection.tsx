@@ -93,7 +93,7 @@ export default function AboutSection() {
               }}
             >
               <img
-                src="/assets/generated/mayur-sahu-headshot.dim_400x500.png"
+                src="/assets/generated/mayur-sahu-headshot-new.dim_400x500.png"
                 alt="Mayur Sahu — Amazon Growth Consultant"
                 className="w-full object-cover"
                 style={{

@@ -43,9 +43,10 @@ export default function Navigation() {
         {/* Logo / Brand */}
         <div className="flex flex-col cursor-pointer" onClick={() => scrollToSection('hero')}>
           <span
-            className="font-heading font-semibold tracking-wide"
+            className="font-heading font-semibold tracking-wide flex items-center gap-1"
             style={{ color: '#C9A84C', fontSize: '1.6rem', lineHeight: 1.2 }}
           >
+            <span style={{ fontSize: '1.3rem', lineHeight: 1 }}>👑</span>
             ProSellers
           </span>
           <span
@@ -132,6 +133,16 @@ export default function Navigation() {
           className="lg:hidden px-6 pb-6 pt-2 flex flex-col gap-4"
           style={{ borderTop: '1px solid rgba(201, 168, 76, 0.15)' }}
         >
+          {/* Mobile brand header with crown */}
+          <div className="flex items-center gap-1 pb-2" style={{ borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
+            <span style={{ fontSize: '1.1rem' }}>👑</span>
+            <span
+              className="font-heading font-semibold"
+              style={{ color: '#C9A84C', fontSize: '1.2rem' }}
+            >
+              ProSellers
+            </span>
+          </div>
           {navLinks.map((item) => (
             <button
               key={item.id}
